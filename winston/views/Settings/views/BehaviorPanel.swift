@@ -1,6 +1,6 @@
 //
 //  Behavior.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 05/07/23.
 //
@@ -30,7 +30,7 @@ struct BehaviorPanel: View {
           Toggle("Open Youtube Videos Externally", isOn: $behaviorDefSettings.openYoutubeApp)
           #if !os(macOS)
             let auth_type = Biometrics().biometricType()
-            Toggle("Lock Winston With \(auth_type)", isOn: $generalDefSettings.useAuth)
+            Toggle("Lock Redford With \(auth_type)", isOn: $generalDefSettings.useAuth)
           #endif
 
           VStack{

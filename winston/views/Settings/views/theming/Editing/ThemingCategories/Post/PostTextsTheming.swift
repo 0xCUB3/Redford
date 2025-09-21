@@ -1,6 +1,6 @@
 //
 //  PostTextsTheming.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 15/09/23.
 //

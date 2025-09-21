@@ -1,6 +1,6 @@
 //
 //  SubredditFilters.swift
-//  winston
+//  Redford
 //
 //  Created by Zander Bobronnikov on 12/1/23.
 //
@@ -26,10 +26,10 @@ struct SubredditFilters: View, Equatable {
   
   @State var compactOn: String = "Normal"
   
-  var theme: WinstonTheme
+  var theme: RedfordTheme
 
   
-  init(subId: String, filters: [FilterData], selected: String, filterCallback: @escaping ((String) -> ()), searchText: String, searchCallback: @escaping ((String?) -> ()), editCustomFilter: @escaping ((FilterData) -> ()), theme: WinstonTheme) {
+  init(subId: String, filters: [FilterData], selected: String, filterCallback: @escaping ((String) -> ()), searchText: String, searchCallback: @escaping ((String?) -> ()), editCustomFilter: @escaping ((FilterData) -> ()), theme: RedfordTheme) {
     self.subId = subId
     self.filters = filters
     self.selected = selected

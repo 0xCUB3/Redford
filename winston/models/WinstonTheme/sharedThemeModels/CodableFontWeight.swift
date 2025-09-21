@@ -1,6 +1,6 @@
 //
 //  CodableFontWeight.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 21/11/23.
 //

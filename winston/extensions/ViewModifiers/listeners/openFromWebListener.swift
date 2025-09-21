@@ -1,6 +1,6 @@
 //
 //  openFromWebListener.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 10/12/23.
 //
@@ -21,7 +21,7 @@ extension View {
           case .user(let username):
             Nav.fullTo(.posts, .reddit(.user(User(id: username))))
           default:
-            let urlStringWithoutScheme = url.absoluteString.replacingOccurrences(of: "winstonapp://", with: "")
+            let urlStringWithoutScheme = url.absoluteString.replacingOccurrences(of: "Redfordapp://", with: "")
             
             if let safariURL = URL(string: "https://" + urlStringWithoutScheme) {
               if isImageUrl(safariURL.absoluteString) {

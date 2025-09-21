@@ -1,6 +1,6 @@
 //
 //  SubredditRulesTab.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 19/07/23.
 //
@@ -47,7 +47,7 @@ struct SubredditRulesTab: View {
                   
                   let text = MarkdownUtil.formatForMarkdown(rule.description ?? "")
                   Markdown(text.isEmpty ? "Rule without description." : text)
-                    .markdownTheme(.winstonMarkdown(fontSize: 16))
+                    .markdownTheme(.RedfordMarkdown(fontSize: 16))
                 }
               }
               .multilineTextAlignment(.leading)

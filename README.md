@@ -1,15 +1,15 @@
-![Winston Logo](https://i.imgur.com/axc6Rq3.png)
+![Redford Logo](https://i.imgur.com/axc6Rq3.png)
 
 ![Discord](https://img.shields.io/discord/1094807340903039048)
-![License](https://img.shields.io/github/license/lo-cafe/winston)
+![License](https://img.shields.io/github/license/lo-cafe/Redford)
 [![Platform](http://img.shields.io/badge/platform-iOS/iPadOS/macOS-blue.svg)](https://developer.apple.com/iphone/index.action)
-![Release](https://img.shields.io/github/downloads/lo-cafe/winston/total)
-![GitHub issues](https://img.shields.io/github/issues-raw/lo-cafe/winston)
+![Release](https://img.shields.io/github/downloads/lo-cafe/Redford/total)
+![GitHub issues](https://img.shields.io/github/issues-raw/lo-cafe/Redford)
 
-Step into Winston's embracing world! Winston is an elegant, open-source, native crafted Reddit client for iOS that pushes user experience to the next level.
+Step into Redford's embracing world! Redford is an elegant, open-source, native crafted Reddit client for iOS that pushes user experience to the next level.
 
 > [!IMPORTANT]
-> ⚠️ We're hard at work! Both Winston and this README are works in progress. Watch this space for updates!
+> ⚠️ We're hard at work! Both Redford and this README are works in progress. Watch this space for updates!
 
 
 <a href="https://testflight.apple.com/join/3UF8bAUN"><img src="https://i.imgur.com/A5Kpowu.png" width="200"></a>
@@ -18,16 +18,16 @@ Step into Winston's embracing world! Winston is an elegant, open-source, native 
 
 ## 🛠️ How to Install
 
-At the moment, Winston hasn't made its grand appearance on the App Store. But worry not! Here's how you can get your hands on Winston:
-*Please note, Winston's minimum version is now iOS 17.*
+At the moment, Redford hasn't made its grand appearance on the App Store. But worry not! Here's how you can get your hands on Redford:
+*Please note, Redford's minimum version is now iOS 17.*
 
-1. **TestFlight**: Take part in Winston's journey by joining our TestFlight [here](https://testflight.apple.com/join/3UF8bAUN). Be aware that this could be full or unavailable due to TestFlight's occasional downtimes.
+1. **TestFlight**: Take part in Redford's journey by joining our TestFlight [here](https://testflight.apple.com/join/3UF8bAUN). Be aware that this could be full or unavailable due to TestFlight's occasional downtimes.
 
-2. **Sideloading**: Employ [Sideloadly](https://sideloadly.io/) or a sideloading method of your preference to install the Winston IPA directly. Grab the IPA file from our [releases](https://github.com/lo-cafe/winston/releases/latest) page!
+2. **Sideloading**: Employ [Sideloadly](https://sideloadly.io/) or a sideloading method of your preference to install the Redford IPA directly. Grab the IPA file from our [releases](https://github.com/lo-cafe/Redford/releases/latest) page!
 
-## 🎁 Make Winston Better (Contribution)
+## 🎁 Make Redford Better (Contribution)
 
-We open our arms to all those who wish to make Winston even better. If you'd like to contribute, kindly create a pull request based on the ['alpha'](https://github.com/lo-cafe/winston/tree/alpha) branch for seamless integration. We eagerly look forward to your ideas and innovations!
+We open our arms to all those who wish to make Redford even better. If you'd like to contribute, kindly create a pull request based on the ['alpha'](https://github.com/lo-cafe/Redford/tree/alpha) branch for seamless integration. We eagerly look forward to your ideas and innovations!
 
 ## 🔗 Handy Links
 
@@ -40,4 +40,4 @@ We open our arms to all those who wish to make Winston even better. If you'd lik
  
 ## 🔓 License
 
-Winston is open-source, licensed under the GPL-3.0 license. Refer to the LICENSE file in the repository for more details.
+Redford is open-source, licensed under the GPL-3.0 license. Refer to the LICENSE file in the repository for more details.

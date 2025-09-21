@@ -1,6 +1,6 @@
 //
 //  PostFloatingPill.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 06/07/23.
 //

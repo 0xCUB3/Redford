@@ -1,6 +1,6 @@
 //
 //  InboxNotification.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 10/07/23.
 //

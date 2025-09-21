@@ -1,6 +1,6 @@
 //
 //  createPaletteFromColors.swift
-//  winston
+//  Redford
 //
 //  Created by daniel on 23/11/23.
 //

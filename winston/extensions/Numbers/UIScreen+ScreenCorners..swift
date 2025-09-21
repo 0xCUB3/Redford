@@ -1,6 +1,6 @@
 //
 //  UIScreen+ScreenCorners..swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 12/12/23.
 //

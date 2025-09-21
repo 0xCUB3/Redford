@@ -1,6 +1,6 @@
 //
 //  UserView.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 01/07/23.
 //
@@ -67,7 +67,7 @@ struct UserView: View {
   }
   
   func getRepostAvatarRequest(_ post: Post?) -> ImageRequest? {
-    if let post = post, case .repost(let repost) = post.winstonData?.extractedMedia, let repostAuthorFullname = repost.data?.author_fullname {
+    if let post = post, case .repost(let repost) = post.RedfordData?.extractedMedia, let repostAuthorFullname = repost.data?.author_fullname {
       return avatarCache.cache[repostAuthorFullname]?.data
     }
     return nil

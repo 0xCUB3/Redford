@@ -1,6 +1,6 @@
 //
 //  PostThemingPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/09/23.
 //
@@ -17,7 +17,7 @@ private enum PreviewBG: String, CaseIterable {
 }
 
 struct PostThemingPanel: View {
-  @Binding var theme: WinstonTheme
+  @Binding var theme: RedfordTheme
   @State private var selectedCategory = Category.page.rawValue
   @State private var previewBG: PreviewBG = .blur
   @StateObject private var previewPostSample = Post(data: selfPostSampleData)
@@ -44,8 +44,8 @@ struct PostThemingPanel: View {
       .padding(.bottom, 12)
     } preview: {
         VStack(alignment: .leading, spacing: theme.posts.spacing) {
-          if let winstonData = previewPostSample.winstonData {
-            PostContent(post: previewPostSample, winstonData: winstonData, sub: Subreddit(id: "Apple"))
+          if let RedfordData = previewPostSample.RedfordData {
+            PostContent(post: previewPostSample, RedfordData: RedfordData, sub: Subreddit(id: "Apple"))
               .environment(\.useTheme, theme)
               .allowsHitTesting(false)
           }

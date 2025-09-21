@@ -1,8 +1,8 @@
 /* Bundle display name */
-"CFBundleDisplayName" = "Winston Everywhere";
+"CFBundleDisplayName" = "Redford Everywhere";
 
 /* Bundle name */
-"CFBundleName" = "winston-everywhere";
+"CFBundleName" = "redford-everywhere";
 
 /* Copyright (human-readable) */
 "NSHumanReadableCopyright" = "";

@@ -1,6 +1,6 @@
 //
 //  GuidedErrorScene.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 06/01/24.
 //
@@ -23,19 +23,19 @@ struct GuidedErrorScene: View {
       }
       VStack(spacing: 16) {
         
-        WinstonButton {
+        RedfordButton {
           withAnimation(.spring) { scene = .tutorial }
         } label: {
           Label("Repeat tutorial", systemImage: "arrow.clockwise")
         }
         
-        WinstonButton(config: .secondary) {
+        RedfordButton(config: .secondary) {
           nav.append(.advanced)
         } label: {
           Text("I wanna do it manually")
         }
         
-        WinstonButton(config: .secondary) {
+        RedfordButton(config: .secondary) {
           openURL(URL(string: "https://discord.gg/Jw3Syb3nrz")!)
         } label: {
           HStack {

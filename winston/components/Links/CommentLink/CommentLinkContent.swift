@@ -1,6 +1,6 @@
 //
 //  CommentLinkContent.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 08/07/23.
 //
@@ -25,9 +25,9 @@ struct CommentLinkContentPreview: View {
   var comment: Comment
   var avatarsURL: [String:String]?
   var body: some View {
-    if let data = comment.data, let winstonData = comment.winstonData {
+    if let data = comment.data, let RedfordData = comment.RedfordData {
       VStack(alignment: .leading, spacing: 0) {
-        CommentLinkContent(forcedBodySize: sizer.size, showReplies: showReplies, arrowKinds: arrowKinds, indentLines: indentLines, lineLimit: lineLimit, post: post, comment: comment, winstonData: winstonData, avatarsURL: avatarsURL)
+        CommentLinkContent(forcedBodySize: sizer.size, showReplies: showReplies, arrowKinds: arrowKinds, indentLines: indentLines, lineLimit: lineLimit, post: post, comment: comment, RedfordData: RedfordData, avatarsURL: avatarsURL)
       }
       .frame(width: .screenW, height: sizer.size.height + CGFloat((data.depth != 0 ? 42 : 30) + 16))
     }
@@ -48,7 +48,7 @@ struct CommentLinkContent: View {
   var lineLimit: Int?
   var post: Post?
   @ObservedObject var comment: Comment
-  @ObservedObject var winstonData: CommentWinstonData
+  @ObservedObject var RedfordData: CommentRedfordData
   var avatarsURL: [String:String]?
 
   @State private var sizer = Sizer()
@@ -78,7 +78,7 @@ struct CommentLinkContent: View {
   
   var body: some View {    
     let theme = selectedTheme.comments
-    let selectable = (comment.data?.winstonSelecting ?? false)
+    let selectable = (comment.data?.RedfordSelecting ?? false)
     let horPad = theme.theme.innerPadding.horizontal
     
     
@@ -99,7 +99,7 @@ struct CommentLinkContent: View {
           }
           HStack(spacing: 8) {
             if let author = data.author {
-              BadgeView(avatarRequest: winstonData.avatarImageRequest, saved: data.badgeKit.saved, unseen: seenComments == nil ? false : !seenComments!.contains(data.id), usernameColor: (post?.data?.author ?? "") == author ? Color.green : nil, author: data.badgeKit.author,fullname: data.badgeKit.authorFullname, userFlair: data.badgeKit.userFlair, created: data.badgeKit.created, theme: theme.theme.badge, commentTheme: theme.theme)
+              BadgeView(avatarRequest: RedfordData.avatarImageRequest, saved: data.badgeKit.saved, unseen: seenComments == nil ? false : !seenComments!.contains(data.id), usernameColor: (post?.data?.author ?? "") == author ? Color.green : nil, author: data.badgeKit.author,fullname: data.badgeKit.authorFullname, userFlair: data.badgeKit.userFlair, created: data.badgeKit.created, theme: theme.theme.badge, commentTheme: theme.theme)
             }
             
             Spacer()
@@ -123,7 +123,7 @@ struct CommentLinkContent: View {
               .padding(.horizontal, 6)
               .padding(.vertical, 1)
               .background(.orange, in: Capsule(style: .continuous))
-              .onTapGesture { withAnimation { comment.data?.winstonSelecting = false } }
+              .onTapGesture { withAnimation { comment.data?.RedfordSelecting = false } }
             }
             
             if let ups = data.ups {
@@ -227,7 +227,7 @@ struct CommentLinkContent: View {
                   } else {
                     HStack {
                       Markdown(MarkdownUtil.formatForMarkdown(body, showSpoiler: showSpoiler))
-                        .markdownTheme(.winstonMarkdown(fontSize: theme.theme.bodyText.size, lineSpacing: theme.theme.linespacing, textSelection: selectable))
+                        .markdownTheme(.RedfordMarkdown(fontSize: theme.theme.bodyText.size, lineSpacing: theme.theme.linespacing, textSelection: selectable))
                       
                       if MarkdownUtil.containsSpoiler(body) {
                         Spacer()
@@ -256,7 +256,7 @@ struct CommentLinkContent: View {
               )
               .frame(maxWidth: .infinity, alignment: .topLeading)
               .padding(.top, theme.theme.bodyAuthorSpacing)
-              .padding(.bottom, max(0, theme.theme.innerPadding.vertical + (data.depth == 0 && comment.childrenWinston.data.count == 0 ? -theme.theme.cornerRadius : theme.theme.innerPadding.vertical)))
+              .padding(.bottom, max(0, theme.theme.innerPadding.vertical + (data.depth == 0 && comment.childrenRedford.data.count == 0 ? -theme.theme.cornerRadius : theme.theme.innerPadding.vertical)))
               .scaleEffect(1)
               .contentShape(Rectangle())
               .background(forcedBodySize != nil ? nil : GeometryReader { geo in Color.clear.onAppear { sizer.size = geo.size } } )

@@ -1,6 +1,6 @@
 //
 //  mediaExtractor.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 21/08/23.
 //
@@ -81,15 +81,15 @@ enum MediaExtractedType: Equatable {
   case yt(YTMediaExtracted)
   case streamable(StreamableExtracted)
   case repost(Post)
-  case post(EntityExtracted<PostData, PostWinstonData>?)
-  case comment(EntityExtracted<CommentData, CommentWinstonData>?)
-  case subreddit(EntityExtracted<SubredditData, SubredditWinstonData>?)
+  case post(EntityExtracted<PostData, PostRedfordData>?)
+  case comment(EntityExtracted<CommentData, CommentRedfordData>?)
+  case subreddit(EntityExtracted<SubredditData, SubredditRedfordData>?)
   case user(EntityExtracted<UserData, AnyHashable>?)
 }
 
 
 // ORDER MATTERS!
-func mediaExtractor(compact: Bool, contentWidth: Double = .screenW, _ data: PostData, theme: WinstonTheme? = nil) -> MediaExtractedType? {
+func mediaExtractor(compact: Bool, contentWidth: Double = .screenW, _ data: PostData, theme: RedfordTheme? = nil) -> MediaExtractedType? {
   guard !data.is_self else { return nil }
 
   let contentWidth = contentWidth - ((theme?.postLinks.theme.innerPadding.horizontal ?? 0) * 2) - ((theme?.postLinks.theme.outerHPadding ?? 0) * 2)
@@ -188,7 +188,7 @@ func mediaExtractor(compact: Bool, contentWidth: Double = .screenW, _ data: Post
   
   let pathComponents = urlComponents.path.components(separatedBy: "/").filter({ !$0.isEmpty })
   
-  if urlComponents.host?.hasSuffix("reddit.com") == true || urlComponents.host?.hasSuffix("app.winston.cafe") == true, pathComponents.count > 1 {
+  if urlComponents.host?.hasSuffix("reddit.com") == true || urlComponents.host?.hasSuffix("app.Redford.cafe") == true, pathComponents.count > 1 {
     switch pathComponents[0] {
     case "r":
       let subredditName = pathComponents[1]

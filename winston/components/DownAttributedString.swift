@@ -1,6 +1,6 @@
 ////
 ////  DownAttributedString.swift
-////  winston
+////  Redford
 ////
 ////  Created by Igor Marcossi on 02/07/23.
 ////

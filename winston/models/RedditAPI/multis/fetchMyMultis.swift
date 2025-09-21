@@ -1,6 +1,6 @@
 //
 //  fetchMyMultis.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 20/08/23.
 //
@@ -22,7 +22,7 @@ extension RedditAPI {
       let context = PersistenceController.shared.container.newBackgroundContext()
       
       let multisFetchRequest = NSFetchRequest<CachedMulti>(entityName: "CachedMulti")
-      multisFetchRequest.predicate = NSPredicate(format: "winstonCredentialID == %@", currentCredentialID as CVarArg)
+      multisFetchRequest.predicate = NSPredicate(format: "RedfordCredentialID == %@", currentCredentialID as CVarArg)
       let multisResults = (context.performAndWait { try? context.fetch(multisFetchRequest) }) ?? []
       
       data.forEach { c in

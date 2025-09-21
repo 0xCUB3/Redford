@@ -1,6 +1,6 @@
 //
 //  CredentialStatusMetaView.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 08/01/24.
 //

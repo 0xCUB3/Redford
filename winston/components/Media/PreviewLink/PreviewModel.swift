@@ -1,6 +1,6 @@
 //
 //  PreviewModel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 26/09/23.
 //

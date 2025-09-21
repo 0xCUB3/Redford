@@ -1,6 +1,6 @@
 //
 //  CommentModal.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 02/07/23.
 //
@@ -66,8 +66,8 @@ struct ReplyModalComment: View {
   var body: some View {
     ReplyModal(thingFullname: comment.data?.name ?? "", action: action) {
       VStack {
-        if let commentWinstonData = comment.winstonData {
-          CommentLink(indentLines: 0, showReplies: false, comment: comment, commentWinstonData: commentWinstonData, children: comment.childrenWinston)
+        if let commentRedfordData = comment.RedfordData {
+          CommentLink(indentLines: 0, showReplies: false, comment: comment, commentRedfordData: commentRedfordData, children: comment.childrenRedford)
         }
 //          .equatable()
       }

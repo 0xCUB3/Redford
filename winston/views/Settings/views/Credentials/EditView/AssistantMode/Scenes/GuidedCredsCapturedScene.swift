@@ -1,6 +1,6 @@
 //
 //  GuidedCredsCapturedScene.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 06/01/24.
 //
@@ -23,7 +23,7 @@ struct GuidedCredsCapturedScene: View {
             }
           }
           
-          WinstonButton(config: .success) {
+          RedfordButton(config: .success) {
             enableEmptyView()
             openURL(RedditAPI.shared.getAuthorizationCodeURL(draftCredential.apiAppID))
           } label: {

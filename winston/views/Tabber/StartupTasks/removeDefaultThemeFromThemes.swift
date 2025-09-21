@@ -1,6 +1,6 @@
 //
 //  removeDefaultThemeFromThemes.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 30/11/23.
 //

@@ -1,6 +1,6 @@
 //
 //  oldDefaults.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 15/12/23.
 //
@@ -68,13 +68,13 @@ extension Defaults.Keys {
   static let _showSubsAtTop = Key<Bool>("showSubsAtTop", default: false)
   static let _showTitleAtTop = Key<Bool>("showTitleAtTop", default: true)
   
-  static let _redditAPIUserAgent = Key<String>("redditAPIUserAgent", default: "ios:lo.cafe.winston:v0.1.0 (by /u/Kinark)")
+  static let _redditAPIUserAgent = Key<String>("redditAPIUserAgent", default: "ios:lo.cafe.Redford:v0.1.0 (by /u/Kinark)")
   
   static let _openLinksInSafari = Key<Bool>("openLinksInSafari", default: true)
   static let _showTestersCelebrationModal = Key<Bool>("showTestersCelebrationModal", default: true)
   static let _showTipJarModal = Key<Bool>("showTipJarModal", default: true)
   static let _disableAlphabetLettersSectionsInSubsList = Key<Bool>("disableAlphabetLettersSectionsInSubsList", default: false)
-  static let _themesPresets = Key<[WinstonTheme]>("themesPresets", default: [])
+  static let _themesPresets = Key<[RedfordTheme]>("themesPresets", default: [])
   static let _selectedThemeID = Key<String>("selectedThemeID", default: "default")
   static let _feedPostsLoadLimit = Key<Int>("feedPostsLoadLimit", default: 35)
   

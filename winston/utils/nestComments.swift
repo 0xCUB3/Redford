@@ -1,6 +1,6 @@
 //
 //  structureComments.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 05/07/23.
 //
@@ -24,7 +24,7 @@ func nestComments(_ inputComments: [ListingChild<CommentData>], parentID: String
     return nil
   }.forEach { x in
     if let data = x.data, let parentName = data.parent_id, let parent = commentsMap[parentName] {
-      parent.childrenWinston.data.append(x)
+      parent.childrenRedford.data.append(x)
     }
   }
   return rootComments

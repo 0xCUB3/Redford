@@ -1,6 +1,6 @@
 //
 //  OnboardingOpeningSettings.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 01/08/23.
 //
@@ -15,7 +15,7 @@ struct Onboarding1OpeningSettings: View {
     VStack(spacing: 16) {
       OnboardingBigStep(step: 1)
       
-      Text("Open Reddit API settings in Safari by clicking the button below, then switch back to Winston.")
+      Text("Open Reddit API settings in Safari by clicking the button below, then switch back to Redford.")
         .fixedSize(horizontal: false, vertical: true)
         .frame(maxWidth: 300)
       
@@ -38,7 +38,7 @@ struct Onboarding1OpeningSettings: View {
 //    VStack(spacing: 16) {
 //      OnboardingBigStep(step: 1)
 //      
-//      Text("Open Reddit API settings in Safari by clicking the button below, then switch back to Winston.")
+//      Text("Open Reddit API settings in Safari by clicking the button below, then switch back to Redford.")
 //        .fixedSize(horizontal: false, vertical: true)
 //        .frame(maxWidth: 300)
 //      

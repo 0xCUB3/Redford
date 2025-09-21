@@ -1,6 +1,6 @@
 //
 //  injectInTabDestinations.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 02/09/23.
 //
@@ -28,11 +28,11 @@ extension View {
         case .reddit(let reddDest):
           switch reddDest {
           case .post(let (post)):
-            if let sub = post.winstonData?.subreddit {
+            if let sub = post.RedfordData?.subreddit {
               PostView(post: post, subreddit: sub)
             }
           case .postHighlighted(let post, let highlightID):
-            if let sub = post.winstonData?.subreddit {
+            if let sub = post.RedfordData?.subreddit {
               PostView(post: post, subreddit: sub, highlightID: highlightID)
             }
           case .subFeed(let sub):

@@ -1,6 +1,6 @@
 //
 //  AccessibilityPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 13/08/23.
 //

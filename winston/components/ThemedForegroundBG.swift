@@ -1,6 +1,6 @@
 //
 //  ListRowBakground.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 06/12/23.
 //
@@ -50,7 +50,7 @@ struct ThemedForegroundRawBG<S: Shape>: View, Equatable {
           }
           .overlay(shape.fill(isActive ? .accentColor : theme.color(brighter: !theme.blurry && brighter, brighterRatio: 0.075)))
         } else {
-          Rectangle().winstonShiny(shiny)
+          Rectangle().RedfordShiny(shiny)
         }
       }
     }

@@ -1,6 +1,6 @@
 //
 //  WDivider.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 02/08/23.
 //

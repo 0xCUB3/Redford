@@ -1,6 +1,6 @@
 //
 //  AnnouncementSheet.swift
-//  winston
+//  Redford
 //
 //  Created by daniel on 25/11/23.
 //
@@ -28,7 +28,7 @@ struct AnnouncementSheet: View {
             Section {
               let text = MarkdownUtil.formatForMarkdown(announcement.description ?? "")
               Markdown(text.isEmpty ? "Announcement without description." : text)
-                .markdownTheme(.winstonMarkdown(fontSize: 16))
+                .markdownTheme(.RedfordMarkdown(fontSize: 16))
             }
             .padding(.top)
             

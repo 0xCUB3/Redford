@@ -1,6 +1,6 @@
 //
 //  Haptico.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 16/12/23.
 //

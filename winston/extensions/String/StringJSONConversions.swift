@@ -1,6 +1,6 @@
 //
 //  JSONCoding.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 23/11/23.
 //

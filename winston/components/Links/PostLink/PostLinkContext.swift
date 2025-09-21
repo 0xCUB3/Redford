@@ -1,6 +1,6 @@
 //
 //  PostLinkContext.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 24/09/23.
 //
@@ -20,7 +20,7 @@ struct PostLinkContextPreview: View {
 struct PostLinkContext: View {
   @ObservedObject var post: Post
   var body: some View {
-    //        if let perma = post.winstonData?.permaURL {
+    //        if let perma = post.RedfordData?.permaURL {
     //          ShareLink(item: perma) { Label("Share", systemImage: "square.and.arrow.up") }
     //        }
     ForEach(allPostSwipeActions) { action in

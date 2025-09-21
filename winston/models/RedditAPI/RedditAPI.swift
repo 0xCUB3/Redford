@@ -1,6 +1,6 @@
 //
 //  RedditAPI.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 24/06/23.
 //
@@ -14,10 +14,10 @@ import Combine
 
 class RedditAPI: ObservableObject {
   static let shared = RedditAPI()
-  static let winstonAPIBase = "https://winston.lo.cafe/api"
+  static let RedfordAPIBase = "https://Redford.lo.cafe/api"
   static let redditApiURLBase = "https://oauth.reddit.com"
   static let redditWWWApiURLBase = "https://www.reddit.com"
-  static let appRedirectURI: String = "https://app.winston.cafe/auth-success"
+  static let appRedirectURI: String = "https://app.Redford.cafe/auth-success"
   
   var lastAuthState: String?
   @Published var me: User?
@@ -140,7 +140,7 @@ class RedditAPI: ObservableObject {
   }
   
   func getAuthCodeFromURL(_ rawUrl: URL) -> String? {
-    if let url = URL(string: rawUrl.absoluteString.replacingOccurrences(of: "winstonapp://", with: "https://app.winston.cafe/")), url.lastPathComponent == "auth-success", let query = URLComponents(url: url, resolvingAgainstBaseURL: false), let state = query.queryItems?.first(where: { $0.name == "state" })?.value, let code = query.queryItems?.first(where: { $0.name == "code" })?.value, state == lastAuthState {
+    if let url = URL(string: rawUrl.absoluteString.replacingOccurrences(of: "Redfordapp://", with: "https://app.Redford.cafe/")), url.lastPathComponent == "auth-success", let query = URLComponents(url: url, resolvingAgainstBaseURL: false), let state = query.queryItems?.first(where: { $0.name == "state" })?.value, let code = query.queryItems?.first(where: { $0.name == "code" })?.value, state == lastAuthState {
 //      let res = await injectFirstAccessTokenInto(&credential, authCode: code)
 //      lastAuthState = nil
 //      return res

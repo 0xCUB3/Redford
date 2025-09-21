@@ -1,6 +1,6 @@
 //
 //  CommonListsThemingPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 19/09/23.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CommonListsThemingPanel: View {
-  @Binding var theme: WinstonTheme
+  @Binding var theme: RedfordTheme
   var body: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 32) {

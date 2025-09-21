@@ -1,6 +1,6 @@
 //
 //  CommentLinkDefSettings.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 15/12/23.
 //

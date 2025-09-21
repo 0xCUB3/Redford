@@ -1,6 +1,6 @@
 //
 //  CommentData.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 28/06/23.
 //
@@ -11,7 +11,7 @@ import SwiftUI
 import CoreData
 import NukeUI
 
-typealias Comment = GenericRedditEntity<CommentData, CommentWinstonData>
+typealias Comment = GenericRedditEntity<CommentData, CommentRedfordData>
 
 enum RandomErr: Error {
   case oops
@@ -29,9 +29,9 @@ extension Comment {
   convenience init(data: T, kind: String? = nil, parent: ObservableArray<GenericRedditEntity<T, B>>? = nil) {
     self.init(data: data, typePrefix: "\(Comment.prefix)_")
     if let parent = parent {
-      self.parentWinston = parent
+      self.parentRedford = parent
     }
-    self.setupWinstonData()
+    self.setupRedfordData()
     self.kind = kind
 
     if let replies = self.data?.replies {
@@ -39,9 +39,9 @@ extension Comment {
       case .first(_):
         break
       case.second(let listing):
-        self.childrenWinston.data = listing.data?.children?.compactMap { x in
+        self.childrenRedford.data = listing.data?.children?.compactMap { x in
           if let innerData = x.data {
-            let newComment = Comment(data: innerData, kind: x.kind, parent: self.childrenWinston)
+            let newComment = Comment(data: innerData, kind: x.kind, parent: self.childrenRedford)
             return newComment
           }
           return nil
@@ -50,10 +50,10 @@ extension Comment {
     }
   }
   
-  func setupWinstonData() {
-    self.winstonData = .init()
+  func setupRedfordData() {
+    self.RedfordData = .init()
     
-    guard let winstonData = self.winstonData, let data = self.data else { return }
+    guard let RedfordData = self.RedfordData, let data = self.data else { return }
     let theme = getEnabledTheme().comments.theme
     let cs: ColorScheme = UIScreen.main.traitCollection.userInterfaceStyle == .dark ? .dark : .light
   }
@@ -97,7 +97,7 @@ extension Comment {
       commentData.num_reports = nil
       commentData.ups = nil
       self.init(data: commentData, typePrefix: "\(Comment.prefix)_")
-      self.winstonData = .init()
+      self.RedfordData = .init()
     } else {
       throw RandomErr.oops
     }
@@ -198,17 +198,17 @@ extension Comment {
         await MainActor.run { [loadedComments] in
           switch parent {
           case .comment(let comment):
-            if let index = comment.childrenWinston.data.firstIndex(where: { $0.id == id }) {
+            if let index = comment.childrenRedford.data.firstIndex(where: { $0.id == id }) {
               withAnimation {
                 if (self.data?.children?.count ?? 0) <= 25 {
-                  comment.childrenWinston.data.remove(at: index)
+                  comment.childrenRedford.data.remove(at: index)
                 } else {
                   self.data?.children?.removeFirst(childrensLimit)
                   if let _ = self.data?.count {
                     self.data?.count! -= children.count
                   }
                 }
-                comment.childrenWinston.data.insert(contentsOf: loadedComments, at: index)
+                comment.childrenRedford.data.insert(contentsOf: loadedComments, at: index)
               }
             }
           case .post(let postArr):
@@ -271,7 +271,7 @@ extension Comment {
         newComment.ups = 1
         await MainActor.run { [newComment] in
           withAnimation {
-            childrenWinston.data.append(Comment(data: newComment))
+            childrenRedford.data.append(Comment(data: newComment))
           }
         }
       }
@@ -357,11 +357,11 @@ extension Comment {
     if let name = data?.name {
       let result = await RedditAPI.shared.delete(fullname: name)
       if (result ?? false) {
-        if let parentWinston = self.parentWinston {
-          let newParent = parentWinston.data.filter { $0.id != id }
+        if let parentRedford = self.parentRedford {
+          let newParent = parentRedford.data.filter { $0.id != id }
           await MainActor.run {
             withAnimation {
-              self.parentWinston?.data = newParent
+              self.parentRedford?.data = newParent
             }
           }
         }
@@ -372,8 +372,8 @@ extension Comment {
   }
 }
 
-class CommentWinstonData: Hashable, ObservableObject {
-  static func == (lhs: CommentWinstonData, rhs: CommentWinstonData) -> Bool { lhs.avatarImageRequest?.url == rhs.avatarImageRequest?.url }
+class CommentRedfordData: Hashable, ObservableObject {
+  static func == (lhs: CommentRedfordData, rhs: CommentRedfordData) -> Bool { lhs.avatarImageRequest?.url == rhs.avatarImageRequest?.url }
   
   //  var permaURL: URL? = nil
   //  @Published var extractedMedia: MediaExtractedType? = nil
@@ -468,7 +468,7 @@ struct CommentData: GenericRedditEntityDataType {
   var mod_reports: [String]?
   var num_reports: Int?
   var ups: Int?
-  var winstonSelecting: Bool? = false
+  var RedfordSelecting: Bool? = false
   
   var badgeKit: BadgeKit {
     BadgeKit(
@@ -491,8 +491,8 @@ struct CommentData: GenericRedditEntityDataType {
 //
 //   // ...encode all other properties...
 //
-//   if let winstonBodyAttr = winstonBodyAttr {
-//       try container.encode(winstonBodyAttr.markdownRepresentation, forKey: .winstonBodyAttr)
+//   if let RedfordBodyAttr = RedfordBodyAttr {
+//       try container.encode(RedfordBodyAttr.markdownRepresentation, forKey: .RedfordBodyAttr)
 //   }
 //}
 

@@ -1,4 +1,4 @@
-#winstonBanner {
+#RedfordBanner {
   position: fixed;
   z-index: 9999999999;
   bottom: 8px;
@@ -21,7 +21,7 @@
   -webkit-user-drag: none;
 }
 
-#winstonBanner .winstonBannerBg {
+#RedfordBanner .RedfordBannerBg {
   position: absolute;
   left: 0;
   z-index: -1;
@@ -35,7 +35,7 @@
   opacity: 0.25;
 }
 
-#winstonBanner .logoHeyWrapper {
+#RedfordBanner .logoHeyWrapper {
   display: flex;
   color: white;
   align-items: center;
@@ -43,12 +43,12 @@
   font-size: 14px;
 }
 
-#winstonBanner .logoHeyWrapper img {
+#RedfordBanner .logoHeyWrapper img {
   width: 48px;
 }
 
 
-#winstonBanner .openInWinstonButton {
+#RedfordBanner .openInRedfordButton {
   padding: 8px 16px;
   background: #008eff;
   border: none;
@@ -58,7 +58,7 @@
   color: white
 }
 
-#winstonBanner #closeBannerButton {
+#RedfordBanner #closeBannerButton {
   width: 20px;
   height: 20px;
   background: red;

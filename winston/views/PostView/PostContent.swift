@@ -1,6 +1,6 @@
 //
 //  PostContent.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 31/07/23.
 //
@@ -17,7 +17,7 @@ struct PostContent: View, Equatable {
   }
   
   @ObservedObject var post: Post
-  @ObservedObject var winstonData: PostWinstonData
+  @ObservedObject var RedfordData: PostRedfordData
   var sub: Subreddit
   var forceCollapse: Bool = false
   @State private var collapsed = false
@@ -61,13 +61,13 @@ struct PostContent: View, Equatable {
           if !isCollapsed {
             VStack(spacing: 0) {
               VStack(spacing: selectedTheme.posts.spacing) {
-                if let extractedMedia = winstonData.extractedMediaForcedNormal {
-                  MediaPresenter(postDimensions: $winstonData.postDimensionsForcedNormal, controller: nil, postTitle: data.title, badgeKit: data.badgeKit, avatarImageRequest: winstonData.avatarImageRequest, markAsSeen: {}, cornerRadius: selectedTheme.postLinks.theme.mediaCornerRadius, blurPostLinkNSFW: defSettings.blurNSFW, media: extractedMedia, over18: over18, compact: false, contentWidth: winstonData.postDimensionsForcedNormal.mediaSize?.width ?? 0, maxMediaHeightScreenPercentage: Defaults[.PostLinkDefSettings].maxMediaHeightScreenPercentage, resetVideo: nil)
+                if let extractedMedia = RedfordData.extractedMediaForcedNormal {
+                  MediaPresenter(postDimensions: $RedfordData.postDimensionsForcedNormal, controller: nil, postTitle: data.title, badgeKit: data.badgeKit, avatarImageRequest: RedfordData.avatarImageRequest, markAsSeen: {}, cornerRadius: selectedTheme.postLinks.theme.mediaCornerRadius, blurPostLinkNSFW: defSettings.blurNSFW, media: extractedMedia, over18: over18, compact: false, contentWidth: RedfordData.postDimensionsForcedNormal.mediaSize?.width ?? 0, maxMediaHeightScreenPercentage: Defaults[.PostLinkDefSettings].maxMediaHeightScreenPercentage, resetVideo: nil)
                 }
                 
                 if !data.selftext.isEmpty {
                   Markdown(MarkdownUtil.formatForMarkdown(data.selftext))
-                    .markdownTheme(.winstonMarkdown(fontSize: selectedTheme.posts.bodyText.size, lineSpacing: selectedTheme.posts.linespacing))
+                    .markdownTheme(.RedfordMarkdown(fontSize: selectedTheme.posts.bodyText.size, lineSpacing: selectedTheme.posts.linespacing))
                 }
               }
               .nsfw(over18 && defSettings.blurNSFW)
@@ -82,7 +82,7 @@ struct PostContent: View, Equatable {
       .contentShape(Rectangle())
       .onTapGesture { withAnimation(.smooth) { collapsed.toggle() }}
       
-      BadgeOpt(avatarRequest: winstonData.avatarImageRequest, badgeKit: data.badgeKit, showVotes: false, theme: postsTheme.badge,
+      BadgeOpt(avatarRequest: RedfordData.avatarImageRequest, badgeKit: data.badgeKit, showVotes: false, theme: postsTheme.badge,
                openSub: openSubreddit, subName: data.subreddit)
       .id("post-badge")
       .listRowInsets(EdgeInsets(top: postsTheme.spacing / 2, leading: postsTheme.padding.horizontal, bottom: postsTheme.spacing * 0.75, trailing: postsTheme.padding.horizontal))

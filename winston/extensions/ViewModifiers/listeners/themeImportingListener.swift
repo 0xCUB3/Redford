@@ -1,6 +1,6 @@
 //
 //  themeImportingListener.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 10/12/23.
 //
@@ -23,7 +23,7 @@ struct ThemeImportingListenerModifier: ViewModifier {
         Text("The theme was imported successfully. Enable it in \"Themes\" section in the Settings tab.")
       }
       .onOpenURL { url in
-        if url.absoluteString.hasSuffix(".winston") || url.absoluteString.hasSuffix(".zip") {
+        if url.absoluteString.hasSuffix(".Redford") || url.absoluteString.hasSuffix(".zip") {
           globalLoaderStart("Importing...")
           let result = importTheme(at: url)
           globalLoaderDismiss()

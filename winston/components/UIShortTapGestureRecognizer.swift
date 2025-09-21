@@ -1,6 +1,6 @@
 //
 //  SingleDoubleTapGestureRecognizer.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/08/23.
 //

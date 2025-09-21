@@ -1,6 +1,6 @@
 //
 //  Shiny.swift
-//  winston
+//  Redford
 //
 //  Created by daniel on 23/11/23.
 //
@@ -33,7 +33,7 @@ extension View {
   /// Applies the Shiny effect to the view with a specified gradient.
   /// - Parameter shiny: The gradient used for the Shiny effect.
   /// - Returns: A modified version of the view with the Shiny effect applied.
-  func winstonShiny(_ shiny: Gradient? = nil) -> some View {
+  func RedfordShiny(_ shiny: Gradient? = nil) -> some View {
     self.modifier(ShinyModifier(shiny: shiny))
   }
 }

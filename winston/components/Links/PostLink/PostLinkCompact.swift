@@ -1,6 +1,6 @@
 //
 //  PostLinkCompact.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 25/09/23.
 //
@@ -16,8 +16,8 @@ struct PostLinkCompactThumbPlaceholder: View, Equatable {
   var body: some View {
     let scaledCompactModeThumbSize = scaledCompactModeThumbSize()
     Group {
-      if theme.type == .winston {
-        Image(.winstonFlat)
+      if theme.type == .Redford {
+        Image(.RedfordFlat)
           .resizable()
       } else {
         Image(systemName: "square.text.square")
@@ -37,7 +37,7 @@ struct PostLinkCompact: View, Equatable, Identifiable {
   }
   var id: String
   @EnvironmentObject var post: Post
-  @EnvironmentObject var winstonData: PostWinstonData
+  @EnvironmentObject var RedfordData: PostRedfordData
   @EnvironmentObject var sub: Subreddit
   weak var controller: UIViewController?
   var theme: SubPostsListTheme
@@ -64,8 +64,8 @@ struct PostLinkCompact: View, Equatable, Identifiable {
   func resetVideo(video: SharedVideo) {
     DispatchQueue.main.async {
       let newVideo: MediaExtractedType = .video(SharedVideo.get(url: video.url, size: video.size, resetCache: true))
-      post.winstonData?.extractedMedia = newVideo
-      post.winstonData?.extractedMediaForcedNormal = newVideo
+      post.RedfordData?.extractedMedia = newVideo
+      post.RedfordData?.extractedMediaForcedNormal = newVideo
 
     }
   }
@@ -85,8 +85,8 @@ struct PostLinkCompact: View, Equatable, Identifiable {
   
   @ViewBuilder
   func mediaComponentCall(showURLInstead: Bool = false) -> some View {
-    if let data = post.data, let extractedMedia = post.winstonData?.extractedMedia {
-      MediaPresenter(postDimensions: $winstonData.postDimensions, controller: controller, postTitle: data.title, badgeKit: data.badgeKit, avatarImageRequest: winstonData.avatarImageRequest, markAsSeen: !defSettings.lightboxReadsPost ? nil : markAsRead, cornerRadius: theme.theme.mediaCornerRadius, blurPostLinkNSFW: defSettings.blurNSFW, showURLInstead: showURLInstead, media: extractedMedia, over18: over18, compact: true, contentWidth: winstonData.postDimensions.mediaSize?.width ?? 0, maxMediaHeightScreenPercentage: defSettings.maxMediaHeightScreenPercentage, resetVideo: resetVideo)
+    if let data = post.data, let extractedMedia = post.RedfordData?.extractedMedia {
+      MediaPresenter(postDimensions: $RedfordData.postDimensions, controller: controller, postTitle: data.title, badgeKit: data.badgeKit, avatarImageRequest: RedfordData.avatarImageRequest, markAsSeen: !defSettings.lightboxReadsPost ? nil : markAsRead, cornerRadius: theme.theme.mediaCornerRadius, blurPostLinkNSFW: defSettings.blurNSFW, showURLInstead: showURLInstead, media: extractedMedia, over18: over18, compact: true, contentWidth: RedfordData.postDimensions.mediaSize?.width ?? 0, maxMediaHeightScreenPercentage: defSettings.maxMediaHeightScreenPercentage, resetVideo: resetVideo)
         .allowsHitTesting(defSettings.isMediaTappable)
     }
   }
@@ -102,7 +102,7 @@ struct PostLinkCompact: View, Equatable, Identifiable {
   
   @ViewBuilder
   func mediaPiece() -> some View {
-    if let extractedMedia = post.winstonData?.extractedMedia {
+    if let extractedMedia = post.RedfordData?.extractedMedia {
       if case .repost(let repost) = extractedMedia, let repostData = repost.data, let url = URL(string: "https://reddit.com/r/\(repostData.subreddit)/comments/\(repost.id)") {
         PreviewLink(url: url, compact: true, previewModel: PreviewModel.get(url, compact: true))
       } else {
@@ -124,9 +124,9 @@ struct PostLinkCompact: View, Equatable, Identifiable {
           
           VStack(alignment: .leading, spacing: theme.theme.verticalElementsSpacing) {
             VStack(alignment: .leading, spacing: theme.theme.verticalElementsSpacing / 2) {
-              PostLinkTitle(attrString: winstonData.titleAttr, label: data.title.escape, theme: theme.theme.titleText, size: winstonData.postDimensions.titleSize, nsfw: over18, flair: data.link_flair_text)
+              PostLinkTitle(attrString: RedfordData.titleAttr, label: data.title.escape, theme: theme.theme.titleText, size: RedfordData.postDimensions.titleSize, nsfw: over18, flair: data.link_flair_text)
               
-              if let extractedMedia = post.winstonData?.extractedMedia {
+              if let extractedMedia = post.RedfordData?.extractedMedia {
                 if case .repost(let repost) = extractedMedia, let repostData = repost.data, let url = URL(string: "https://reddit.com/r/\(repostData.subreddit)/comments/\(repost.id)") {
                   OnlyURL(url: url)
                 }
@@ -134,8 +134,8 @@ struct PostLinkCompact: View, Equatable, Identifiable {
               }
             }
             
-            let newCommentsCount = winstonData.seenCommentsCount == nil ? nil : data.num_comments - winstonData.seenCommentsCount!
-            BadgeView(avatarRequest: winstonData.avatarImageRequest, showAuthorOnPostLinks: defSettings.showAuthor, saved: data.badgeKit.saved, usernameColor: nil, author: data.badgeKit.author, fullname: data.badgeKit.authorFullname, userFlair: data.badgeKit.userFlair, created: data.badgeKit.created, avatarURL: nil, theme: theme.theme.badge, commentsCount: formatBigNumber(data.badgeKit.numComments), newCommentsCount: newCommentsCount, votesCount: formatBigNumber(data.badgeKit.ups), likes: data.likes, openSub: !theme.theme.badge.avatar.visible && showSub ? openSubreddit : nil, subName: data.subreddit)
+            let newCommentsCount = RedfordData.seenCommentsCount == nil ? nil : data.num_comments - RedfordData.seenCommentsCount!
+            BadgeView(avatarRequest: RedfordData.avatarImageRequest, showAuthorOnPostLinks: defSettings.showAuthor, saved: data.badgeKit.saved, usernameColor: nil, author: data.badgeKit.author, fullname: data.badgeKit.authorFullname, userFlair: data.badgeKit.userFlair, created: data.badgeKit.created, avatarURL: nil, theme: theme.theme.badge, commentsCount: formatBigNumber(data.badgeKit.numComments), newCommentsCount: newCommentsCount, votesCount: formatBigNumber(data.badgeKit.ups), likes: data.likes, openSub: !theme.theme.badge.avatar.visible && showSub ? openSubreddit : nil, subName: data.subreddit)
             
             if showSub && theme.theme.badge.avatar.visible {
               let subName = data.subreddit
@@ -154,9 +154,9 @@ struct PostLinkCompact: View, Equatable, Identifiable {
         .frame(maxWidth: .infinity, alignment: .topLeading)
         
       }
-      .postLinkStyle(showSubBottom: showSub && theme.theme.badge.avatar.visible, post: post, sub: sub, theme: theme, size: winstonData.postDimensions.size, secondary: secondary, openPost: openPost, readPostOnScroll: defSettings.readOnScroll, hideReadPosts: defSettings.hideOnRead)
+      .postLinkStyle(showSubBottom: showSub && theme.theme.badge.avatar.visible, post: post, sub: sub, theme: theme, size: RedfordData.postDimensions.size, secondary: secondary, openPost: openPost, readPostOnScroll: defSettings.readOnScroll, hideReadPosts: defSettings.hideOnRead)
       .swipyUI(onTap: openPost, actionsSet: defSettings.swipeActions, entity: post)
-//      .frame(width: winstonData.postDimensions.size.width, height: winstonData.postDimensions.size.height)
+//      .frame(width: RedfordData.postDimensions.size.width, height: RedfordData.postDimensions.size.height)
     }
   }
 }

@@ -1,6 +1,6 @@
 //
 //  SubredditPosts.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 26/06/23.
 //
@@ -226,8 +226,8 @@ struct SubredditPosts: View, Equatable {
     }
   }
   
-  func updatePostsCalcs(_ newTheme: WinstonTheme) {
-    Task(priority: .background) { posts.data.forEach { $0.setupWinstonData(data: $0.data, winstonData: $0.winstonData, contentWidth: contentWidth, secondary: false, theme: selectedTheme, sub: subreddit, fetchAvatar: false) } }
+  func updatePostsCalcs(_ newTheme: RedfordTheme) {
+    Task(priority: .background) { posts.data.forEach { $0.setupRedfordData(data: $0.data, RedfordData: $0.RedfordData, contentWidth: contentWidth, secondary: false, theme: selectedTheme, sub: subreddit, fetchAvatar: false) } }
   }
   
   var body: some View {

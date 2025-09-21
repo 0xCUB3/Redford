@@ -1,6 +1,6 @@
 //
 //  AppIconSetting.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 30/09/23.
 //
@@ -9,12 +9,12 @@ import SwiftUI
 
 struct AppIconSetting: View {
   @State private var appIconManager = AppIconManger()
-  @State private var appIcon: WinstonAppIcon = .standard
+  @State private var appIcon: RedfordAppIcon = .standard
   @Environment(\.useTheme) private var theme
   var body: some View {
     List {
       Section {
-        ForEach(WinstonAppIcon.allCases) { icon in
+        ForEach(RedfordAppIcon.allCases) { icon in
           HStack(spacing: 12) {
             Image(uiImage: icon.preview)
               .resizable()

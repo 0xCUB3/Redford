@@ -1,6 +1,6 @@
 //
 //  Nav.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 08/12/23.
 //
@@ -22,7 +22,7 @@ class Nav: ObservableObject, Identifiable, Equatable {
   static func resetStack() { Nav.shared.activeRouter.resetNavPath() }
   /* </Util static functions for ease of use> */
   
-  static let swipeAnywhereGestureName = "swipe-anywhere-winston"
+  static let swipeAnywhereGestureName = "swipe-anywhere-Redford"
   
   static private func newRouterForTab(_ tab: TabIdentifier, _ id: UUID) -> Router { Router(id: "\(tab.rawValue)TabRouter-\(id.uuidString)") }
     
@@ -35,7 +35,7 @@ class Nav: ObservableObject, Identifiable, Equatable {
     case onboarding
     case editingCredential(RedditCredential)
     case announcement(Announcement)
-    case editingTheme(WinstonTheme)
+    case editingTheme(RedfordTheme)
     case sharedTheme(ThemeData)
     
     var id: String {

@@ -1,6 +1,6 @@
 //
 //  PostLinkNormal.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 25/09/23.
 //
@@ -31,7 +31,7 @@ struct PostLinkNormal: View, Equatable, Identifiable {
   }
   
   @EnvironmentObject var post: Post
-  @EnvironmentObject var winstonData: PostWinstonData
+  @EnvironmentObject var RedfordData: PostRedfordData
   @EnvironmentObject var sub: Subreddit
   var id: String
   weak var controller: UIViewController?
@@ -60,8 +60,8 @@ struct PostLinkNormal: View, Equatable, Identifiable {
   func resetVideo(video: SharedVideo) {
     DispatchQueue.main.async {
       let newVideo: MediaExtractedType = .video(SharedVideo.get(url: video.url, size: video.size, resetCache: true))
-      post.winstonData?.extractedMedia = newVideo
-      post.winstonData?.extractedMediaForcedNormal = newVideo
+      post.RedfordData?.extractedMedia = newVideo
+      post.RedfordData?.extractedMediaForcedNormal = newVideo
       
     }
   }
@@ -82,12 +82,12 @@ struct PostLinkNormal: View, Equatable, Identifiable {
   @ViewBuilder
   func mediaComponentCall() -> some View {
     if let data = post.data {
-      if let extractedMedia = winstonData.extractedMedia {
-        MediaPresenter(postDimensions: $winstonData.postDimensions, controller: controller, postTitle: data.title, badgeKit: data.badgeKit, avatarImageRequest: winstonData.avatarImageRequest, markAsSeen: !defSettings.lightboxReadsPost ? nil : markAsRead, cornerRadius: theme.theme.mediaCornerRadius, blurPostLinkNSFW: defSettings.blurNSFW, media: extractedMedia, over18: over18, compact: false, contentWidth: winstonData.postDimensions.mediaSize?.width ?? 0, maxMediaHeightScreenPercentage: defSettings.maxMediaHeightScreenPercentage, resetVideo: resetVideo)
+      if let extractedMedia = RedfordData.extractedMedia {
+        MediaPresenter(postDimensions: $RedfordData.postDimensions, controller: controller, postTitle: data.title, badgeKit: data.badgeKit, avatarImageRequest: RedfordData.avatarImageRequest, markAsSeen: !defSettings.lightboxReadsPost ? nil : markAsRead, cornerRadius: theme.theme.mediaCornerRadius, blurPostLinkNSFW: defSettings.blurNSFW, media: extractedMedia, over18: over18, compact: false, contentWidth: RedfordData.postDimensions.mediaSize?.width ?? 0, maxMediaHeightScreenPercentage: defSettings.maxMediaHeightScreenPercentage, resetVideo: resetVideo)
           .allowsHitTesting(defSettings.isMediaTappable)
         
         if case .repost(let repost) = extractedMedia {
-          if let repostWinstonData = repost.winstonData, let repostSub = repostWinstonData.subreddit {
+          if let repostRedfordData = repost.RedfordData, let repostSub = repostRedfordData.subreddit {
             PostLink(
               id: repost.id,
               controller: controller,
@@ -101,9 +101,9 @@ struct PostLinkNormal: View, Equatable, Identifiable {
             .background(Color.primary.opacity(0.05))
             .cornerRadius(theme.theme.mediaCornerRadius)
             //                }
-            //            .swipyRev(size: repostWinstonData.postDimensions.size, actionsSet: postSwipeActions, entity: repost)
+            //            .swipyRev(size: repostRedfordData.postDimensions.size, actionsSet: postSwipeActions, entity: repost)
             .environmentObject(repost)
-            .environmentObject(repostWinstonData)
+            .environmentObject(repostRedfordData)
             .environmentObject(repostSub)
           }
         }
@@ -120,7 +120,7 @@ struct PostLinkNormal: View, Equatable, Identifiable {
         
         if defSettings.titlePosition == .bottom { mediaComponentCall() }
         
-        PostLinkTitle(attrString: winstonData.titleAttr, label: data.title.escape, theme: theme.theme.titleText, size: winstonData.postDimensions.titleSize, nsfw: over18, flair: data.link_flair_text)
+        PostLinkTitle(attrString: RedfordData.titleAttr, label: data.title.escape, theme: theme.theme.titleText, size: RedfordData.postDimensions.titleSize, nsfw: over18, flair: data.link_flair_text)
           .padding(.bottom, 5)
         
         if !data.selftext.isEmpty && defSettings.showSelfText {
@@ -133,8 +133,8 @@ struct PostLinkNormal: View, Equatable, Identifiable {
         if theme.theme.showDivider && defSettings.dividerPosition == .bottom { SubsNStuffLine().equatable() }
         
         HStack {
-          let newCommentsCount = winstonData.seenCommentsCount == nil ? nil : data.num_comments - winstonData.seenCommentsCount!
-          BadgeView(avatarRequest: winstonData.avatarImageRequest, showAuthorOnPostLinks: defSettings.showAuthor, saved: data.badgeKit.saved, usernameColor: nil, author: data.badgeKit.author, fullname: data.badgeKit.authorFullname, userFlair: data.badgeKit.userFlair, created: data.badgeKit.created, avatarURL: nil, theme: theme.theme.badge, commentsCount: formatBigNumber(data.num_comments), newCommentsCount: newCommentsCount, votesCount: defSettings.showVotesCluster ? nil : formatBigNumber(data.ups), likes: data.likes, openSub: showSub ? openSubreddit : nil, subName: data.subreddit)
+          let newCommentsCount = RedfordData.seenCommentsCount == nil ? nil : data.num_comments - RedfordData.seenCommentsCount!
+          BadgeView(avatarRequest: RedfordData.avatarImageRequest, showAuthorOnPostLinks: defSettings.showAuthor, saved: data.badgeKit.saved, usernameColor: nil, author: data.badgeKit.author, fullname: data.badgeKit.authorFullname, userFlair: data.badgeKit.userFlair, created: data.badgeKit.created, avatarURL: nil, theme: theme.theme.badge, commentsCount: formatBigNumber(data.num_comments), newCommentsCount: newCommentsCount, votesCount: defSettings.showVotesCluster ? nil : formatBigNumber(data.ups), likes: data.likes, openSub: showSub ? openSubreddit : nil, subName: data.subreddit)
           
           Spacer()
           
@@ -142,7 +142,7 @@ struct PostLinkNormal: View, Equatable, Identifiable {
           
         }
       }
-      .postLinkStyle(post: post, sub: sub, theme: theme, size: winstonData.postDimensions.size, secondary: secondary, openPost: openPost, readPostOnScroll: defSettings.readOnScroll, hideReadPosts: defSettings.hideOnRead)
+      .postLinkStyle(post: post, sub: sub, theme: theme, size: RedfordData.postDimensions.size, secondary: secondary, openPost: openPost, readPostOnScroll: defSettings.readOnScroll, hideReadPosts: defSettings.hideOnRead)
       .swipyUI(onTap: openPost, actionsSet: defSettings.swipeActions, entity: post, secondary: secondary)
     }
   }

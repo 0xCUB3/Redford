@@ -1,6 +1,6 @@
 //
 //  FeedThemingPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 14/09/23.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 
 struct FeedThemingPanel: View {
-  @Binding var theme: WinstonTheme
+  @Binding var theme: RedfordTheme
   @StateObject private var previewPostSample = Post(data: postSampleData)
   @StateObject private var previewPostSubSample = Subreddit(id: postSampleData.subreddit)
   
@@ -51,7 +51,7 @@ struct FeedThemingPanel: View {
       }
     } preview: {
       ScrollView(showsIndicators: false) {
-        if let winstonData = previewPostSample.winstonData {
+        if let RedfordData = previewPostSample.RedfordData {
           VStack(spacing: theme.postLinks.spacing) {
             PostLink(id: previewPostSample.id, theme: theme.postLinks, showSub: true, secondary: true, compactPerSubreddit: nil, contentWidth: contentWidth, defSettings: postLinkDefSettings)
             .equatable()
@@ -66,7 +66,7 @@ struct FeedThemingPanel: View {
           }
           .environmentObject(previewPostSample)
           .environmentObject(previewPostSubSample)
-          .environmentObject(winstonData)
+          .environmentObject(RedfordData)
           .padding(.horizontal, theme.postLinks.theme.outerHPadding)
           .allowsHitTesting(false)
           .contentShape(Rectangle())
@@ -76,8 +76,8 @@ struct FeedThemingPanel: View {
       .frame(height: (.screenH - getSafeArea().top - getSafeArea().bottom) / 2, alignment: .top)
       .clipped()
     }
-    .onAppear { previewPostSample.setupWinstonData(winstonData: previewPostSample.winstonData, theme: theme) }
-    .onChange(of: theme) { x in previewPostSample.setupWinstonData(winstonData: previewPostSample.winstonData, theme: x) }
+    .onAppear { previewPostSample.setupRedfordData(RedfordData: previewPostSample.RedfordData, theme: theme) }
+    .onChange(of: theme) { x in previewPostSample.setupRedfordData(RedfordData: previewPostSample.RedfordData, theme: x) }
     .scrollContentBackground(.hidden)
     .themedListBG(theme.lists.bg)
     .navigationTitle("Posts feed")

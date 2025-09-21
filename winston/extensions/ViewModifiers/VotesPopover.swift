@@ -1,6 +1,6 @@
 //
 //  VotesCounter.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 18/07/23.
 //

@@ -1,6 +1,6 @@
 //
 //  ThemeStoreUploadSheet.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 26/09/23.
 //
@@ -34,7 +34,7 @@ struct ThemeStoreUploadSheet: View {
 
 
 struct LocalUploadThemeItem: View {
-  var theme: WinstonTheme
+  var theme: RedfordTheme
   @State var upload_state: String = "local"
   @EnvironmentObject var themeStore: ThemeStoreAPI
   @State var uploading: Bool = false

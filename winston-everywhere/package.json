@@ -1,7 +1,7 @@
 {
-  "name": "winston-everywhere",
+  "name": "redford-everywhere",
   "version": "1.0.0",
-  "description": "Winston app safari extension companion",
+  "description": "Redford app safari extension companion",
   "scripts": {
     "build": "parcel build src/manifest.json --no-content-hash --no-cache",
     "build-report": "parcel build src/manifest.json --no-cache --reporter @parcel/reporter-bundle-analyzer",
@@ -10,14 +10,14 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lo-cafe/winston.git"
+    "url": "git+https://github.com/lo-cafe/Redford.git"
   },
   "author": "lo.cafe",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lo-cafe/winston/issues"
+    "url": "https://github.com/lo-cafe/Redford/issues"
   },
-  "homepage": "https://github.com/lo-cafe/winston#readme",
+  "homepage": "https://github.com/lo-cafe/Redford#readme",
   "devDependencies": {
     "@parcel/config-webextension": "^2.10.3",
     "@parcel/reporter-bundle-analyzer": "^2.10.3",

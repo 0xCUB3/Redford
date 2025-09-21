@@ -1,6 +1,6 @@
 //
 //  ChangeAuthAPIKey.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 09/07/23.
 //
@@ -199,7 +199,7 @@ struct CopiableValue: View {
 //             }
 //           }
           
-//           CardStep(currentStep: 3, title: "Done!", subTitle: "I hope you love winston!", step: $step) {
+//           CardStep(currentStep: 3, title: "Done!", subTitle: "I hope you love Redford!", step: $step) {
 //             VStack (alignment: .leading) {
 //               Text("That's it! Your API credentials are setup and you don't need to worry about these boring details anymore.")
 //               MasterButton(icon: "hand.thumbsup.fill", label: "Nice!", height: 44, fullWidth: true) {

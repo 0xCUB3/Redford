@@ -1,6 +1,6 @@
 //
 //  IconManager.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 30/09/23.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum WinstonAppIcon: String, CaseIterable, Identifiable {
+enum RedfordAppIcon: String, CaseIterable, Identifiable {
   var id: String { self.rawValue }
   
   case standard,
@@ -22,8 +22,8 @@ enum WinstonAppIcon: String, CaseIterable, Identifiable {
   
   var description: String {
     switch self {
-    case .standard: return "Classic winston icon"
-    case .explode: return "One of Winston's heroic moments."
+    case .standard: return "Classic Redford icon"
+    case .explode: return "One of Redford's heroic moments."
     case .peak: return "Really, anyone?"
     case .side: return "Wow, look at him!"
     case .simpleEyesBlack: return "Why not right?"
@@ -63,13 +63,13 @@ enum WinstonAppIcon: String, CaseIterable, Identifiable {
 }
 
 class AppIconManger {
-  var current: WinstonAppIcon {
-    return WinstonAppIcon.allCases.first(where: {
+  var current: RedfordAppIcon {
+    return RedfordAppIcon.allCases.first(where: {
       $0.name == UIApplication.shared.alternateIconName
     }) ?? .standard
   }
   
-  func setIcon(_ appIcon: WinstonAppIcon, completion: ((Bool) -> Void)? = nil) {
+  func setIcon(_ appIcon: RedfordAppIcon, completion: ((Bool) -> Void)? = nil) {
     guard current != appIcon,
           UIApplication.shared.supportsAlternateIcons
     else { return }

@@ -1,6 +1,6 @@
 //
 //  CredentialsPanelEmptyView.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 31/12/23.
 //
@@ -36,7 +36,7 @@ struct CredentialsPanelEmptyView: View {
           Label {
             Text("Restart welcome tutorial")
           } icon: {
-            Image(.winstonFlat)
+            Image(.RedfordFlat)
               .asFontSize(17)
           }
         })

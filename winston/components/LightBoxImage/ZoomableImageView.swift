@@ -1,6 +1,6 @@
 //
 //  ZoomableImageView.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 27/08/23.
 //

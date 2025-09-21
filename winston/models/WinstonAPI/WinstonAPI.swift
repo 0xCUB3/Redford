@@ -1,6 +1,6 @@
 //
-//  winstonAPI.swift
-//  winston
+//  RedfordAPI.swift
+//  Redford
 //
 //  Created by daniel on 25/11/23.
 //
@@ -8,8 +8,8 @@
 import Foundation
 import Alamofire
 
-class WinstonAPI: ObservableObject {
-  static var shared = WinstonAPI()
+class RedfordAPI: ObservableObject {
+  static var shared = RedfordAPI()
     static let baseURL = "https://preview.webhook.metisbot.xyz"
 //  static let baseURL = "http://localhost:3000"
 //  static let bearerToken = "2cYk@dXT!ZjXagF_-h6x"

@@ -1,6 +1,6 @@
 //
 //  SubredditPostsIPAD.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 28/09/23.
 //
@@ -26,7 +26,7 @@ struct SubredditPostsIPAD: View, Equatable {
   var searchCallback: ((String?) -> ())
   var editCustomFilter: ((FilterData) -> ())
   var fetch: (Bool, String?, Bool) -> ()
-  var selectedTheme: WinstonTheme
+  var selectedTheme: RedfordTheme
 	var loading: Bool
   
   @State var lastPostOnRefreshRequest = ""
@@ -50,7 +50,7 @@ struct SubredditPostsIPAD: View, Equatable {
     VStack(spacing: 8) {
       
 //      if let sub = subreddit {
-//        SubredditFilters(subId: sub.id, filters: sub.winstonData?.flairs ?? [], selected: filter, filterCallback: filterCallback, searchText: searchText, searchCallback: searchCallback, editCustomFilter: editCustomFilter, theme: selectedTheme)
+//        SubredditFilters(subId: sub.id, filters: sub.RedfordData?.flairs ?? [], selected: filter, filterCallback: filterCallback, searchText: searchText, searchCallback: searchCallback, editCustomFilter: editCustomFilter, theme: selectedTheme)
 //      }
 		if isFiltered && posts.count == 0 {
 				Text("No filtered posts")
@@ -78,18 +78,18 @@ struct SubredditPostsIPAD: View, Equatable {
         collection: posts,
         scrollDirection: .vertical,
         contentSize: .custom({ collectionView, layout, post in
-          post.winstonData?.postDimensions.size ?? CGSize(width: 300, height: 300)
+          post.RedfordData?.postDimensions.size ?? CGSize(width: 300, height: 300)
         }),
         //          itemSpacing: .init(mainAxisSpacing: selectedTheme.postLinks.spacing, crossAxisSpacing: selectedTheme.postLinks.spacing),
         //          itemSpacing: .init(mainAxisSpacing: 0, crossAxisSpacing: 0),
         contentForData: { post, i in
           Group {
-            if let sub = subreddit ?? post.winstonData?.subreddit, let winstonData = post.winstonData {
+            if let sub = subreddit ?? post.RedfordData?.subreddit, let RedfordData = post.RedfordData {
               PostLink(id: post.id, theme: selectedTheme.postLinks, showSub: showSub, compactPerSubreddit: feedDefSettings.compactPerSubreddit[sub.id], contentWidth: contentWidth, defSettings: postLinkDefSettings)
-//              .swipyRev(size: winstonData.postDimensions.size, actionsSet: postLinkDefSettings.swipeActions, entity: post)
+//              .swipyRev(size: RedfordData.postDimensions.size, actionsSet: postLinkDefSettings.swipeActions, entity: post)
               .environmentObject(post)
               .environmentObject(sub)
-              .environmentObject(winstonData)
+              .environmentObject(RedfordData)
               .onAppear {
                 if(posts.count - 7 == i && !isFiltered && !loading) { loadMorePosts() }
               }

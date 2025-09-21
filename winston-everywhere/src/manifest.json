@@ -17,17 +17,17 @@
   },
   "content_scripts": [
     {
-      "js": [ "WinstonApiHelper/index.jsx" ],
+      "js": [ "RedfordApiHelper/index.jsx" ],
       "matches": [ "https://*.reddit.com/prefs/apps" ]
     },
     {
-      "js": [ "common.js", "OpenInWinstonBanner/openInWinston.js" ],
-      "css": [ "OpenInWinstonBanner/openInWinstonBannerStyles.css" ],
+      "js": [ "common.js", "OpenInRedfordBanner/openInRedford.js" ],
+      "css": [ "OpenInRedfordBanner/openInRedfordBannerStyles.css" ],
       "matches": [ "*://*.reddit.com/*" ],
       "exclude_matches": [ "*://*.reddit.com/prefs/apps*", "*://*.reddit.com/api/v1/authorize" ]
     },
     {
-      "js": [ "common.js", "openWinstonEverywhere.js" ],
+      "js": [ "common.js", "openRedfordEverywhere.js" ],
       "matches": [ "*://*/*" ],
       "exclude_matches": [ "*://*.reddit.com/prefs/apps*", "*://*.reddit.com/api/v1/authorize" ]
     }

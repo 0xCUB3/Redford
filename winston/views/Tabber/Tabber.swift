@@ -1,6 +1,6 @@
 //
 //  Tabber.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 24/06/23.
 //
@@ -32,7 +32,7 @@ struct Tabber: View, Equatable {
     }
   }
   
-  init(theme: WinstonTheme) {
+  init(theme: RedfordTheme) {
     Tabber.updateTabAndNavBar(tabTheme: theme.general.tabBarBG, navTheme: theme.general.navPanelBG)
   }
   
@@ -90,7 +90,7 @@ struct Tabber: View, Equatable {
     }
     .overlay(TabBarOverlay(meTabTap: meTabTap), alignment: .bottom)
     .openFromWebListener()
-    .themeFetchingListener() // From WinstonAPI
+    .themeFetchingListener() // From RedfordAPI
     .newCredentialListener()
     .themeImportingListener() // From local file
     .globalLoaderProvider()

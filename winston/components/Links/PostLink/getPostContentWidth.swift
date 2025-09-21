@@ -1,6 +1,6 @@
 //
 //  getPostContentWidth.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 24/09/23.
 //
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Defaults
 
-func getPostContentWidth(contentWidth: Double = .screenW, secondary: Bool = false, theme: WinstonTheme? = nil) -> CGFloat {
+func getPostContentWidth(contentWidth: Double = .screenW, secondary: Bool = false, theme: RedfordTheme? = nil) -> CGFloat {
   let selectedTheme = theme ?? getEnabledTheme()
   let theme = selectedTheme.postLinks.theme
   var value: CGFloat = 0
@@ -60,7 +60,7 @@ struct PostDimensions: Hashable, Equatable {
   }
 }
 
-func getPostDimensions(post: Post, winstonData: PostWinstonData? = nil, columnWidth: Double = .screenW, secondary: Bool = false, rawTheme: WinstonTheme? = nil, compact: Bool? = nil, subId: String? = nil) -> PostDimensions {
+func getPostDimensions(post: Post, RedfordData: PostRedfordData? = nil, columnWidth: Double = .screenW, secondary: Bool = false, rawTheme: RedfordTheme? = nil, compact: Bool? = nil, subId: String? = nil) -> PostDimensions {
   if let data = post.data {
     let selectedTheme = rawTheme ?? getEnabledTheme()
     let showSelfPostThumbnails = Defaults[.PostLinkDefSettings].compactMode.showPlaceholderThumbnail
@@ -68,7 +68,7 @@ func getPostDimensions(post: Post, winstonData: PostWinstonData? = nil, columnWi
     let showAuthorOnPostLinks = Defaults[.PostLinkDefSettings].showAuthor
     let maxDefaultHeight: CGFloat = Defaults[.PostLinkDefSettings].maxMediaHeightScreenPercentage
     let maxHeight: CGFloat = (maxDefaultHeight / 100) * (.screenH)
-    let extractedMedia = compact ? winstonData?.extractedMedia : winstonData?.extractedMediaForcedNormal
+    let extractedMedia = compact ? RedfordData?.extractedMedia : RedfordData?.extractedMediaForcedNormal
     let compactImgSize = scaledCompactModeThumbSize()
     let theme = selectedTheme.postLinks.theme
     let postGeneralSpacing = theme.verticalElementsSpacing + theme.linespacing
@@ -92,8 +92,8 @@ func getPostDimensions(post: Post, winstonData: PostWinstonData? = nil, columnWi
     if compact { ACC_mediaSize = extractedMedia != nil || showSelfPostThumbnails ? compactMediaSize : .zero } else {
       if let extractedMedia = extractedMedia {
         func defaultMediaSize(_ size: CGSize) -> CGSize {
-          let sourceHeight = size.height == 0 ? winstonData?.postDimensions.mediaSize?.height ?? 0 : size.height
-          let sourceWidth = size.width == 0 ? winstonData?.postDimensions.mediaSize?.width ?? 0 : size.width
+          let sourceHeight = size.height == 0 ? RedfordData?.postDimensions.mediaSize?.height ?? 0 : size.height
+          let sourceWidth = size.width == 0 ? RedfordData?.postDimensions.mediaSize?.width ?? 0 : size.width
           let propHeight = (contentWidth * sourceHeight) / (sourceWidth == 0 ? 1 : sourceWidth)
           let finalHeight = maxDefaultHeight != 110 ? Double(min(maxHeight, propHeight)) : Double(propHeight)
           return CGSize(width: contentWidth, height: finalHeight)
@@ -118,7 +118,7 @@ func getPostDimensions(post: Post, winstonData: PostWinstonData? = nil, columnWi
         case .link(_):
           ACC_mediaSize = CGSize(width: contentWidth, height: PreviewLinkContentRaw.height)
         case .repost(let repost):
-          if let repostSize = repost.winstonData?.postDimensions { ACC_mediaSize = repostSize.size }
+          if let repostSize = repost.RedfordData?.postDimensions { ACC_mediaSize = repostSize.size }
         case .post(_):
           ACC_mediaSize = CGSize(width: contentWidth, height: RedditMediaPost.height)
         case .comment(_):

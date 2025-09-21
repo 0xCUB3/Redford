@@ -1,6 +1,6 @@
 //
 //  calcVotes.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 12/08/23.
 //

@@ -1,6 +1,6 @@
 //
 //  CommentsThemingPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/09/23.
 //
@@ -12,7 +12,7 @@ private enum Category: String, CaseIterable {
 }
 
 struct CommentsGeneralSettings: View {
-  @Binding var theme: WinstonTheme
+  @Binding var theme: RedfordTheme
   var body: some View {
     Group {
       FakeSection("Spacing") {
@@ -86,7 +86,7 @@ struct CommentsGeneralSettings: View {
 }
 
 struct CommentsThemingPanel: View {
-  @Binding var theme: WinstonTheme
+  @Binding var theme: RedfordTheme
   @State private var selectedCategory = Category.general.rawValue
   @StateObject private var sampleComment = Comment(data: getCommentSampleData())
 //  
@@ -129,7 +129,7 @@ struct CommentsThemingPanel: View {
 }
 
 struct PreviewComment: View {
-  var selectedTheme: WinstonTheme
+  var selectedTheme: RedfordTheme
   var comment: Comment
   var body: some View {
     let theme = selectedTheme.comments
@@ -140,8 +140,8 @@ struct PreviewComment: View {
         .frame(maxWidth: .infinity, minHeight: theme.theme.cornerRadius, maxHeight: theme.theme.cornerRadius, alignment: .top)
         .clipped()
       
-      if let commentWinstonData = comment.winstonData {
-        CommentLink(comment: comment, commentWinstonData: commentWinstonData, children: comment.childrenWinston)
+      if let commentRedfordData = comment.RedfordData {
+        CommentLink(comment: comment, commentRedfordData: commentRedfordData, children: comment.childrenRedford)
       }
       
       Spacer()

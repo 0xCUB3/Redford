@@ -1,6 +1,6 @@
 //
 //  RedditMediaPost.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 31/07/23.
 //
@@ -17,8 +17,8 @@ struct RedditMediaPost: View {
         switch entity {
         case .comment(let comment):
             //            ShortCommentPostLink(comment: comment)
-          if let commentWinstonData = comment.winstonData {
-            CommentLink(showReplies: false, comment: comment, commentWinstonData: commentWinstonData, children: comment.childrenWinston)
+          if let commentRedfordData = comment.RedfordData {
+            CommentLink(showReplies: false, comment: comment, commentRedfordData: commentRedfordData, children: comment.childrenRedford)
               .padding(.vertical, 8)
           }
         case .post(let post):

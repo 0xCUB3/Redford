@@ -1,6 +1,6 @@
 //
 //  PostLinkThemingPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/09/23.
 //
@@ -13,7 +13,7 @@ private enum Category: String, CaseIterable {
 }
 
 struct PostLinkThemingPanel: View {
-  @Binding var theme: WinstonTheme
+  @Binding var theme: RedfordTheme
   @State private var selectedCategory = "card"
   @StateObject var previewPostSample: Post
   @StateObject private var previewPostSubSample = Subreddit(id: postSampleData.subreddit)
@@ -47,12 +47,12 @@ struct PostLinkThemingPanel: View {
     } preview: {
       
       VStack {
-        if let winstonData = previewPostSample.winstonData {
+        if let RedfordData = previewPostSample.RedfordData {
           PostLink(id: previewPostSample.id, theme: theme.postLinks, showSub: true, secondary: false, compactPerSubreddit: nil, contentWidth: contentWidth, defSettings: postLinkDefSettings)
 //          .equatable()
           .environmentObject(previewPostSample)
           .environmentObject(previewPostSubSample)
-          .environmentObject(winstonData)
+          .environmentObject(RedfordData)
 //          .environment(\.useTheme, theme)
           .allowsHitTesting(false)
         }
@@ -62,9 +62,9 @@ struct PostLinkThemingPanel: View {
       FakeSection("Options") {
         HStack {
           Toggle("Seen", isOn: Binding(get: {
-            previewPostSample.data?.winstonSeen ?? false
+            previewPostSample.data?.RedfordSeen ?? false
           }, set: { val in
-            previewPostSample.data?.winstonSeen = val
+            previewPostSample.data?.RedfordSeen = val
           }))
           .onTapGesture {}
           VDivider()
@@ -80,8 +80,8 @@ struct PostLinkThemingPanel: View {
       
       
     }
-    .onAppear { previewPostSample.setupWinstonData(winstonData: previewPostSample.winstonData, theme: theme) }
-    .onChange(of: theme) { x in previewPostSample.setupWinstonData(winstonData: previewPostSample.winstonData, theme: x) }
+    .onAppear { previewPostSample.setupRedfordData(RedfordData: previewPostSample.RedfordData, theme: theme) }
+    .onChange(of: theme) { x in previewPostSample.setupRedfordData(RedfordData: previewPostSample.RedfordData, theme: x) }
     .themedListBG(theme.lists.bg)
     .scrollContentBackground(.hidden)
     .listStyle(.plain)

@@ -1,6 +1,6 @@
 //
 //  Persistence.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 23/06/23.
 //
@@ -33,8 +33,8 @@ struct PersistenceController {
   let primaryBGContext: NSManagedObjectContext
   
   init(inMemory: Bool = false) {
-//    container = NSPersistentContainer(name: "winston")
-    container = NSPersistentCloudKitContainer(name: "winston")
+//    container = NSPersistentContainer(name: "Redford")
+    container = NSPersistentCloudKitContainer(name: "Redford")
         
     if inMemory {
       container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")

@@ -1,6 +1,6 @@
 //
 //  Post.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 28/06/23.
 //
@@ -74,8 +74,8 @@ struct PostView: View, Equatable {
         List {
           Group {
             Section {
-              if let winstonData = post.winstonData {
-                PostContent(post: post, winstonData: winstonData, sub: subreddit, forceCollapse: forceCollapse)
+              if let RedfordData = post.RedfordData {
+                PostContent(post: post, RedfordData: RedfordData, sub: subreddit, forceCollapse: forceCollapse)
               }
               //              .equatable()
               

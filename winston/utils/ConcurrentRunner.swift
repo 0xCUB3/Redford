@@ -1,6 +1,6 @@
 //
 //  ConcurrentRunner.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 14/12/23.
 //
@@ -17,7 +17,7 @@ struct ConcurrentRunner {
   
   func run(id: String = "") {
     let group = DispatchGroup()
-    let queue = DispatchQueue(label: "lo.cafe.winston.concurrentRunner\(id.isEmpty ? "" : ".\(id)")", attributes: .concurrent)
+    let queue = DispatchQueue(label: "lo.cafe.Redford.concurrentRunner\(id.isEmpty ? "" : ".\(id)")", attributes: .concurrent)
     
     for task in tasks {
       group.enter()

@@ -1,6 +1,6 @@
 //
 //  swiftEnvValues.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 08/12/23.
 //
@@ -62,7 +62,7 @@ extension EnvironmentValues {
     get { self[ContentWidthKey.self] }
     set { self[ContentWidthKey.self] = newValue }
   }
-  var useTheme: WinstonTheme {
+  var useTheme: RedfordTheme {
     get { self[CurrentThemeKey.self] }
     set { self[CurrentThemeKey.self] = newValue }
   }

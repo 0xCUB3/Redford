@@ -1,6 +1,6 @@
 //
 //  EndOfFeedView.swift
-//  winston
+//  Redford
 //
 //  Created by Ethan Bills on 11/21/23.
 //
@@ -13,7 +13,7 @@ struct EndOfFeedView: View {
 
   var body: some View {
     ZStack {
-      Image("winstonEOF")
+      Image("RedfordEOF")
         .resizable()
         .aspectRatio(contentMode: .fill)
         .onTapGesture {

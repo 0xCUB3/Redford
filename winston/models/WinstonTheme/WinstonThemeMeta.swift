@@ -1,13 +1,13 @@
 //
-//  WinstonThemeMeta.swift
-//  winston
+//  RedfordThemeMeta.swift
+//  Redford
 //
 //  Created by Igor Marcossi on 21/11/23.
 //
 
 import Foundation
 
-struct WinstonThemeMeta: Codable, Hashable, Equatable {
+struct RedfordThemeMeta: Codable, Hashable, Equatable {
   enum CodingKeys: String, CodingKey {
     case name, description, color, icon, author
   }
@@ -36,7 +36,7 @@ struct WinstonThemeMeta: Codable, Hashable, Equatable {
   }
   
   init(from decoder: Decoder) throws {
-    let t = WinstonThemeMeta()
+    let t = RedfordThemeMeta()
     let container = try decoder.container(keyedBy: CodingKeys.self)
     self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? t.name
     self.description = try container.decodeIfPresent(String.self, forKey: .description) ?? t.description

@@ -1,6 +1,6 @@
 //
 //  SafariWebExtensionHandler.swift
-//  winston-everywhere
+//  redford-everywhere
 //
 //  Created by Igor Marcossi on 29/07/23.
 //

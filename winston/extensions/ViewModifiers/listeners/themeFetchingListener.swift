@@ -1,6 +1,6 @@
 //
 //  themeFetchingListener.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 10/12/23.
 //
@@ -13,7 +13,7 @@ struct ThemeFetchingListenerModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
       .onOpenURL { url in
-        if url.absoluteString.contains("winstonapp://theme/") {
+        if url.absoluteString.contains("Redfordapp://theme/") {
           let themeID = url.lastPathComponent
           Task(priority: .background) {
             if let sharedTheme = await themeStoreAPI.fetchThemeByID(id: themeID) {

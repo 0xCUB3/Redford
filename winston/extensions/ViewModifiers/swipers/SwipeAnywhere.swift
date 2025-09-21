@@ -1,6 +1,6 @@
 //
 //  SwipeAnywhere.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 16/08/23.
 //

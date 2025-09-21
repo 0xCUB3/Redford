@@ -18,7 +18,7 @@
 //  case main
 //}
 //
-//struct WinstonCollectionView<CellContent: View, T: GenericRedditEntityDataType, B: Hashable>: UIViewControllerRepresentable {
+//struct RedfordCollectionView<CellContent: View, T: GenericRedditEntityDataType, B: Hashable>: UIViewControllerRepresentable {
 //  
 //  typealias Data = GenericRedditEntity<T, B>
 //  typealias Collection = [Data]
@@ -96,13 +96,13 @@
 //  }
 //}
 //
-//extension WinstonCollectionView {
+//extension RedfordCollectionView {
 //  
 //  final class Coordinator : NSObject, ListCollectionViewAdapterDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-//    fileprivate var view: WinstonCollectionView
+//    fileprivate var view: RedfordCollectionView
 //    fileprivate var collectionController: CollectionViewController?
 //    
-//    init(view: WinstonCollectionView) {
+//    init(view: RedfordCollectionView) {
 //      self.view = view
 //    }
 //    
@@ -150,8 +150,8 @@
 //      }
 //      
 //      override func sizeForItem(at indexPath: SectionIndexPath, using layout: UICollectionViewLayout, in context: CollectionViewContext) -> CGSize {
-//        if let post = items[indexPath] as? Post, let winstonData = post.winstonData {
-//          return winstonData.postDimensions.size
+//        if let post = items[indexPath] as? Post, let RedfordData = post.RedfordData {
+//          return RedfordData.postDimensions.size
 //        }
 //        return CGSize(width: context.containerSize.width, height: 300)
 //      }
@@ -174,7 +174,7 @@
 //  var sectionId: FeedSectionId { .first }
 //}
 //
-//extension WinstonCollectionView {
+//extension RedfordCollectionView {
 //  final class CollectionViewController : UIViewController {
 //    fileprivate let layout: UICollectionViewFlowLayout
 //    fileprivate let collectionView: UICollectionView

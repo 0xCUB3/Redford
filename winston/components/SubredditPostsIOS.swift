@@ -1,6 +1,6 @@
 //
 //  SubredditPostsIOS.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 28/09/23.
 //
@@ -26,7 +26,7 @@ struct SubredditPostsIOS: View, Equatable {
   var searchCallback: ((String?) -> ())
   var editCustomFilter: ((FilterData) -> ())
   var fetch: (Bool, String?, Bool) -> ()
-  var selectedTheme: WinstonTheme
+  var selectedTheme: RedfordTheme
   var loading: Bool
   
   @Binding var reachedEndOfFeed: Bool
@@ -69,11 +69,11 @@ struct SubredditPostsIOS: View, Equatable {
 //      ) {
       Section {
         ForEach(Array(posts.enumerated()), id: \.self.element.id) { i, post in
-          if let sub = subreddit ?? post.winstonData?.subreddit, let winstonData = post.winstonData {
+          if let sub = subreddit ?? post.RedfordData?.subreddit, let RedfordData = post.RedfordData {
             PostLink(id: post.id, theme: selectedTheme.postLinks, showSub: showSub, compactPerSubreddit: feedDefSettings.compactPerSubreddit[sub.id], contentWidth: contentWidth, defSettings: postLinkDefSettings)
             .environmentObject(sub)
             .environmentObject(post)
-            .environmentObject(winstonData)
+            .environmentObject(RedfordData)
             .task(priority: .background) {
               if(posts.count - 7 == i && !isFiltered && !loading) { loadMorePosts() }
             }

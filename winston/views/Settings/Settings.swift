@@ -1,6 +1,6 @@
 //
 //  Settings.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 24/06/23.
 //
@@ -17,7 +17,7 @@ struct Settings: View {
   @Environment(\.useTheme) private var selectedTheme
   @State private var id = UUID().uuidString
   
-  @ObservedObject var winstonAPI = WinstonAPI.shared
+  @ObservedObject var RedfordAPI = RedfordAPI.shared
   
   @State var presentingWhatsNew: Bool = false
   @State var presentingAnnouncement: Bool = false

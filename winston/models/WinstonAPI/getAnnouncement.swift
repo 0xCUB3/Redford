@@ -1,6 +1,6 @@
 //
 //  getAnnouncement.swift
-//  winston
+//  Redford
 //
 //  Created by daniel on 25/11/23.
 //
@@ -8,12 +8,12 @@
 import Foundation
 import Alamofire
 
-extension WinstonAPI {
+extension RedfordAPI {
   
   
   func getAnnouncement(present: Bool = false) async -> Announcement? {
       let response = await AF.request(
-        "\(WinstonAPI.baseURL)/api/v1/announcement",
+        "\(RedfordAPI.baseURL)/api/v1/announcement",
         method: .get
       )
         .serializingDecodable(Announcement.self).response

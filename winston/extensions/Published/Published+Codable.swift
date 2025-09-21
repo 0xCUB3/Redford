@@ -1,6 +1,6 @@
 //
 //  Published+Codable.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 08/12/23.
 //

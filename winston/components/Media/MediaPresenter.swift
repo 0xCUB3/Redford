@@ -1,6 +1,6 @@
 //
 //  MediaPresenter.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 22/08/23.
 //
@@ -28,7 +28,7 @@ struct OnlyURL: View {
     .lineLimit(1)
     .foregroundColor(.white)
     .highPriorityGesture(TapGesture().onEnded {
-      if let newURL = URL(string: url.absoluteString.replacingOccurrences(of: "https://reddit.com/", with: "winstonapp://")) {
+      if let newURL = URL(string: url.absoluteString.replacingOccurrences(of: "https://reddit.com/", with: "Redfordapp://")) {
         Nav.openURL(newURL)
       }
     })

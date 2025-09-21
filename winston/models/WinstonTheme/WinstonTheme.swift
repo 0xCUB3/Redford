@@ -1,6 +1,6 @@
 //
-//  WinstonTheme.swift
-//  winston
+//  RedfordTheme.swift
+//  Redford
 //
 //  Created by Igor Marcossi on 07/09/23.
 //
@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 import Defaults
 
-struct WinstonTheme: Codable, Identifiable, Hashable, Equatable, Defaults.Serializable {
+struct RedfordTheme: Codable, Identifiable, Hashable, Equatable, Defaults.Serializable {
   enum CodingKeys: String, CodingKey {
     case metadata, id, postLinks, posts, comments, lists, general
   }
   
-  var metadata: WinstonThemeMeta
+  var metadata: RedfordThemeMeta
   var id: String
   var postLinks: SubPostsListTheme
   var posts: PostTheme
@@ -27,7 +27,7 @@ struct WinstonTheme: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
     Defaults[.ThemesDefSettings].themesPresets[index] = self
   }
   
-  func duplicate() -> WinstonTheme {
+  func duplicate() -> RedfordTheme {
     var copy = self
     copy.id = UUID().uuidString
     if copy.metadata.name == "Default" { copy.metadata.name = randomWord().capitalized }
@@ -35,7 +35,7 @@ struct WinstonTheme: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
   }
   
   init(
-    metadata: WinstonThemeMeta = WinstonThemeMeta(),
+    metadata: RedfordThemeMeta = RedfordThemeMeta(),
     id: String = UUID().uuidString,
     postLinks: SubPostsListTheme,
     posts: PostTheme,
@@ -65,7 +65,7 @@ struct WinstonTheme: Codable, Identifiable, Hashable, Equatable, Defaults.Serial
   
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    self.metadata = try container.decode(WinstonThemeMeta.self, forKey: .metadata)
+    self.metadata = try container.decode(RedfordThemeMeta.self, forKey: .metadata)
     self.id = try container.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString
     self.postLinks = try container.decodeIfPresent(SubPostsListTheme.self, forKey: .postLinks) ?? defaultTheme.postLinks
     self.posts = try container.decodeIfPresent(PostTheme.self, forKey: .posts) ?? defaultTheme.posts

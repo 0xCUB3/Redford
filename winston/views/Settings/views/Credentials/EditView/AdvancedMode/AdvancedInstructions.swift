@@ -1,6 +1,6 @@
 //
 //  AdvancedInstructions.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/01/24.
 //
@@ -53,7 +53,7 @@ struct AdvancedInstructions: View {
           Text("**1.** Open Reddit API settings")
           Text("**2.** Check the **\"web app\"** option")
           Text("**3.** Fill the **\"redirect uri\"** with this:")
-          WinstonButton(config: .secondary(fullWidth: true)) {
+          RedfordButton(config: .secondary(fullWidth: true)) {
             withAnimation(.spring) {
               UIPasteboard.general.string = RedditAPI.appRedirectURI
               copied.toggle()

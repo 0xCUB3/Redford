@@ -1,6 +1,6 @@
 //
 //  MultiPostsView.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 20/08/23.
 //
@@ -85,8 +85,8 @@ struct MultiPostsView: View {
     fetch()
   }
   
-  func updatePostsCalcs(_ newTheme: WinstonTheme) {
-    Task(priority: .background) { posts.data.forEach { $0.setupWinstonData(data: $0.data, winstonData: $0.winstonData, contentWidth: contentWidth, secondary: false, theme: selectedTheme, sub: $0.winstonData?.subreddit, fetchAvatar: false) } }
+  func updatePostsCalcs(_ newTheme: RedfordTheme) {
+    Task(priority: .background) { posts.data.forEach { $0.setupRedfordData(data: $0.data, RedfordData: $0.RedfordData, contentWidth: contentWidth, secondary: false, theme: selectedTheme, sub: $0.RedfordData?.subreddit, fetchAvatar: false) } }
   }
   
   var body: some View {

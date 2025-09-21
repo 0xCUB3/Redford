@@ -1,6 +1,6 @@
 //
 //  ThemeStoreDetailsView.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 26/09/23.
 //

@@ -1,6 +1,6 @@
 //
 //  GuidedWaitingScene.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 06/01/24.
 //
@@ -29,26 +29,26 @@ struct GuidedWaitingScene: View {
         switch state {
         case .start:
           if scene == .credsCaptured {
-            WinstonButton(config: .secondary) {
+            RedfordButton(config: .secondary) {
               withAnimation(.spring) { state = .oauth }
             } label: {
               Label("I got an OAuth error", systemImage: "xmark.circle.fill")
             }
           }
           
-          WinstonButton(config: .secondary) {
+          RedfordButton(config: .secondary) {
             withAnimation(.spring) { state = .lost }
           } label: {
             Label("I'm lost!", systemImage: "location.slash.fill")
           }
           
-          WinstonButton(config: .secondary) {
+          RedfordButton(config: .secondary) {
             withAnimation(.spring) { commonScene = nil }
           } label: {
             Label("Go to previous screen", systemImage: "arrowshape.left.fill")
           }
           
-          WinstonButton(config: .secondary) {
+          RedfordButton(config: .secondary) {
             nav.append(.advanced)
           } label: {
             Label("I wanna do it manually", systemImage: "hand.raised.fingers.spread.fill")
@@ -64,21 +64,21 @@ struct GuidedWaitingScene: View {
         }
         
         if state != .start {
-          WinstonButton(config: .secondary) {
+          RedfordButton(config: .secondary) {
             withAnimation(.spring) { commonScene = nil }
           } label: {
             Label("Go to previous screen", systemImage: "arrowshape.left.fill")
           }
           .transition(.scaleAndBlur.animation(.spring.delay(0.2)))
           
-          WinstonButton(config: .secondary) {
+          RedfordButton(config: .secondary) {
             withAnimation(.spring) { scene = .tutorial; commonScene = nil }
           } label: {
             Label("Restart tutorial", systemImage: "arrow.clockwise")
           }
           .transition(.scaleAndBlur.animation(.spring.delay(0.3)))
           
-          WinstonButton(config: .secondary) {
+          RedfordButton(config: .secondary) {
             openURL(URL(string: "https://discord.gg/Jw3Syb3nrz")!)
           } label: {
             HStack {

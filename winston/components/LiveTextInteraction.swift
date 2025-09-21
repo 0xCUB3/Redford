@@ -1,6 +1,6 @@
 //
 //  LiveTextInteraction.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 25/08/23.
 //

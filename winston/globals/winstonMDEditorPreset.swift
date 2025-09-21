@@ -1,6 +1,6 @@
 //
-//  winstonMDEditorTheme.swift
-//  winston
+//  RedfordMDEditorTheme.swift
+//  Redford
 //
 //  Created by Igor Marcossi on 25/07/23.
 //
@@ -53,7 +53,7 @@ let textColor = UIColor.label
 
 private let maxHeadingLevel = 6
 
-var winstonMDEditorPreset: [HighlightRule] {
+var RedfordMDEditorPreset: [HighlightRule] {
   [
     HighlightRule(pattern: inlineCodeRegex, formattingRule: TextFormattingRule(key: .font, value: codeFont)),
     HighlightRule(pattern: codeBlockRegex, formattingRule: TextFormattingRule(key: .font, value: codeFont)),

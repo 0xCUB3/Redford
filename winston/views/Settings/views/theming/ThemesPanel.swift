@@ -1,6 +1,6 @@
 //
 //  ThemesPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 08/09/23.
 //
@@ -90,7 +90,7 @@ struct ThemeNavLink: View {
   @Environment(\.useTheme) private var selectedTheme
   @State private var isMoving = false
   @State private var zipUrl: URL? = nil
-  var theme: WinstonTheme
+  var theme: RedfordTheme
   
   
   func zipFiles() {
@@ -118,7 +118,7 @@ struct ThemeNavLink: View {
     HStack(spacing: 8) {
       Group {
         if isDefault {
-          Image("winstonFlat")
+          Image("RedfordFlat")
             .resizable()
             .scaledToFit()
             .frame(height: 36)
@@ -178,7 +178,7 @@ struct ThemeNavLink: View {
   }
 }
 
-func createZipFile(with imgNames: [String], theme: WinstonTheme, completion: @escaping(_ url: URL?) -> Void) {
+func createZipFile(with imgNames: [String], theme: RedfordTheme, completion: @escaping(_ url: URL?) -> Void) {
   do {
     let zipURL = try createZip(images: imgNames, theme: theme)
     completion(zipURL)

@@ -4,7 +4,7 @@ import { IoMdAdd } from "@react-icons/all-files/io/IoMdAdd"
 import { CgClose } from "@react-icons/all-files/cg/CgClose"
 
 import getCredentials from "../domInteraction/getCredentials"
-import fillWinstonApp from "../domInteraction/fillWinstonApp"
+import fillRedfordApp from "../domInteraction/fillRedfordApp"
 import zoomRecaptcha, { unzoomRecaptcha } from "../domInteraction/zoomRecaptcha"
 import submitCreateAppForm from "../domInteraction/submitCreateAppForm"
 import selectCredential from "../utils/selectCredential"
@@ -59,7 +59,7 @@ const HelperBanner = () => {
       primary: {
         label: "Let's do it!",
         fn: () => {
-          fillWinstonApp()
+          fillRedfordApp()
           setTimeout(() => {
             setButtons(null)
             pointToCaptcha()
@@ -146,16 +146,16 @@ const HelperBanner = () => {
   }
 
   function dismiss() {
-    if (confirm("Are you sure you want to dismiss Winston API keys assistant?")) {
+    if (confirm("Are you sure you want to dismiss Redford API keys assistant?")) {
       unzoomRecaptcha()
       setIsWatchingCreds(false)
       setIsWatchingGCaptcha(false)
       setDimBG(false)
       setPositionBanner({ bottom: "-100%" })
       setTimeout(() => {
-        const winstonBanner = document.querySelector("#winston-api-helper-react-container")
-        if (winstonBanner) {
-          winstonBanner.remove()
+        const RedfordBanner = document.querySelector("#redford-api-helper-react-container")
+        if (RedfordBanner) {
+          RedfordBanner.remove()
         }
       }, 500)
     }
@@ -219,13 +219,13 @@ const HelperBanner = () => {
     <>
       <BGDimmer dimBG={dimBG} />
       <MotionConfig transition={spring}>
-        <motion.div layout style={{ borderRadius: 118, ...positionBanner }} className="wrapperWinston">
-          <motion.div style={{ borderRadius: 118 }} className="winstonContent">
+        <motion.div layout style={{ borderRadius: 118, ...positionBanner }} className="wrapperRedford">
+          <motion.div style={{ borderRadius: 118 }} className="RedfordContent">
             <motion.img
               layout="position"
               layoutId="logo"
-              src="https://winston.cafe/side-winston-tinyfied.png"
-              alt="Winston Logo"
+              src="https://Redford.cafe/side-redford-tinyfied.png"
+              alt="Redford Logo"
             />
             <motion.div layout="position">
               <h1>{title}</h1>
@@ -238,7 +238,7 @@ const HelperBanner = () => {
                   {actuallyShowCredentials &&
                     credentials.map((cred) => (
                       <CredentialItem
-                        key={`winston-${cred.appID}`}
+                        key={`redford-${cred.appID}`}
                         credential={cred}
                         use={useExistingCredential}
                         del={deleteExistingCredential}
@@ -246,7 +246,7 @@ const HelperBanner = () => {
                       />
                     ))}
                   {actuallyShowCredentials && credentials.length < 3 && (
-                    <button className="fullWidthWinstonBtn" onClick={createNewCredential}>
+                    <button className="fullWidthRedfordBtn" onClick={createNewCredential}>
                       <IoMdAdd />
                       Create new API key
                     </button>
@@ -260,7 +260,7 @@ const HelperBanner = () => {
               <motion.div layout="position" className="buttonsHolder">
                 {buttons.secondary && (
                   <button
-                    className="fullWidthWinstonBtn"
+                    className="fullWidthRedfordBtn"
                     onClick={() => buttons.secondary.fn(credentials)}
                     id={`button-secondary-${buttons.secondary.label}`}
                   >
@@ -269,7 +269,7 @@ const HelperBanner = () => {
                 )}
                 {buttons.primary && (
                   <button
-                    className="fullWidthWinstonBtn primary"
+                    className="fullWidthRedfordBtn primary"
                     onClick={() => buttons.primary.fn(credentials)}
                     id={`button-primary-${buttons.primary.label}`}
                   >

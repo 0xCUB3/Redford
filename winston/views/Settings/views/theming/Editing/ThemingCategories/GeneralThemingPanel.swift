@@ -1,6 +1,6 @@
 //
 //  GeneralThemingPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/09/23.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 
 struct GeneralThemingPanel: View {
-  @Binding var theme: WinstonTheme
+  @Binding var theme: RedfordTheme
   @Default(.ThemesDefSettings) private var themesDefSettings
   @State private var restartAlert = false
   @State private var firstWarning = false

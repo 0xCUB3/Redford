@@ -1,6 +1,6 @@
 //
 //  CardSettings.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 09/09/23.
 //
@@ -37,16 +37,16 @@ struct CardSettings: View {
           Text("Placeholder image")
           
           HStack(spacing: 2) {
-            Image(.winstonFlat)
+            Image(.RedfordFlat)
               .resizable()
               .aspectRatio(1, contentMode: .fit)
               .frame(height: 24)
               .frame(maxWidth: .infinity, maxHeight: .infinity)
-              .background(RR(8, .primary.opacity(theme.compactSelftextPostLinkPlaceholderImg.type == .winston ? 0.1 : 0)))
+              .background(RR(8, .primary.opacity(theme.compactSelftextPostLinkPlaceholderImg.type == .Redford ? 0.1 : 0)))
               .contentShape(Rectangle())
               .onTapGesture {
                 withAnimation(.default.speed(2)) {
-                  theme.compactSelftextPostLinkPlaceholderImg.type = .winston
+                  theme.compactSelftextPostLinkPlaceholderImg.type = .Redford
                 }
               }
             Image(systemName: "square.text.square")

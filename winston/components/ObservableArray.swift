@@ -1,6 +1,6 @@
 //
 //  observableArray.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 06/07/23.
 //
@@ -29,7 +29,7 @@ class ObservableArray<T: ObservableObject>: ObservableObject {
       self.cancellables.append($0.objectWillChange.sink(receiveValue: { _ in
         self.objectWillChange.send()
       }))
-      if let comment = $0 as? GenericRedditEntity<CommentData, CommentWinstonData>, let wd = comment.winstonData {
+      if let comment = $0 as? GenericRedditEntity<CommentData, CommentRedfordData>, let wd = comment.RedfordData {
         self.cancellables.append(wd.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }))
       }
     })

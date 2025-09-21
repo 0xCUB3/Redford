@@ -1,6 +1,6 @@
 //
 //  GuidedAuthSuccessScene.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 06/01/24.
 //
@@ -15,11 +15,11 @@ struct GuidedAuthSuccessScene: View {
         BetterLottieView("party-appear", size: 128, skipInitialProgress: 0.02, color: nil)
         VStack(spacing: 4) {
         Text("Sweeeet!").fontSize(32, .bold)
-        Text("Everything went well. You can start using Winston now!").opacity(0.9)
+        Text("Everything went well. You can start using Redford now!").opacity(0.9)
       }
       }
       VStack(spacing: 16) {
-        WinstonButton {
+        RedfordButton {
           Hap.shared.play(intensity: 0.75, sharpness: 0.5)
           doThisAfter(0.1) { Hap.shared.play(intensity: 0.9, sharpness: 1) }
           draftCredential.save()

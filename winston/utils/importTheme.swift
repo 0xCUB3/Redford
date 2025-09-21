@@ -1,6 +1,6 @@
 //
 //  importTheme.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 02/10/23.
 //
@@ -33,7 +33,7 @@ func importTheme(at rawFileURL: URL) -> Bool {
     let unzipDirectory = try Zip.quickUnzipFile(fileURL)
     let themeJsonURL = unzipDirectory.appendingPathComponent("theme.json")
     let themeData = try Data(contentsOf: themeJsonURL)
-    let theme = try JSONDecoder().decode(WinstonTheme.self, from: themeData)
+    let theme = try JSONDecoder().decode(RedfordTheme.self, from: themeData)
     
     let urls = try fileManager.contentsOfDirectory(at: unzipDirectory, includingPropertiesForKeys: nil)
     let destinationURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!

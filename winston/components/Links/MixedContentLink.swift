@@ -1,6 +1,6 @@
 //
 //  MixedContentLink.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 21/11/23.
 //
@@ -23,18 +23,18 @@ struct MixedContentLink: View, Equatable {
   var body: some View {
     switch content {
     case .first(let post):
-      if let winstonData = post.winstonData, let postSub = winstonData.subreddit {
+      if let RedfordData = post.RedfordData, let postSub = RedfordData.subreddit {
         PostLink(id: post.id, theme: theme, showSub: true, compactPerSubreddit: nil, contentWidth: contentWidth, defSettings: postLinkDefSettings)
         .environmentObject(post)
         .environmentObject(postSub)
-        .environmentObject(winstonData)
+        .environmentObject(RedfordData)
       }
     case .second(let comment):
       VStack {
         ShortCommentPostLink(comment: comment)
           .padding()
-        if let commentWinstonData = comment.winstonData {
-          CommentLink(showReplies: false, comment: comment, commentWinstonData: commentWinstonData, children: comment.childrenWinston)
+        if let commentRedfordData = comment.RedfordData {
+          CommentLink(showReplies: false, comment: comment, commentRedfordData: commentRedfordData, children: comment.childrenRedford)
         }
       }
       .background(PostLinkBG(theme: theme, stickied: false, secondary: false).equatable())

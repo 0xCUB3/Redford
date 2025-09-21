@@ -1,6 +1,6 @@
 //
 //  inlineSymbol.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 29/08/23.
 //

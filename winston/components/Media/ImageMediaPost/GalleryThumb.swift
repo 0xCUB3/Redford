@@ -1,6 +1,6 @@
 //
 //  GalleryThumb.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 22/08/23.
 //

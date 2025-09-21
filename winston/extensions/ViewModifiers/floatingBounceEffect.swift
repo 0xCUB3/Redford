@@ -1,6 +1,6 @@
 //
 //  floatBounceEffect.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/12/23.
 //

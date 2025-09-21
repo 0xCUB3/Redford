@@ -1,6 +1,6 @@
 //
 //  PostData.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 26/06/23.
 //
@@ -13,39 +13,39 @@ import CoreData
 import YouTubePlayerKit
 import Alamofire
 
-typealias Post = GenericRedditEntity<PostData, PostWinstonData>
+typealias Post = GenericRedditEntity<PostData, PostRedfordData>
 
 extension Post {
   static var prefetcher = ImagePrefetcher(pipeline: ImagePipeline.shared, destination: .memoryCache, maxConcurrentRequestCount: 10)
   static var prefix = "t3"
   var selfPrefix: String { Self.prefix }
   
-  convenience init(data: T, sub: Subreddit? = nil, contentWidth: Double = .screenW, secondary: Bool = false, imgPriority: ImageRequest.Priority = .low, theme: WinstonTheme? = nil, fetchAvatar: Bool = true) {
+  convenience init(data: T, sub: Subreddit? = nil, contentWidth: Double = .screenW, secondary: Bool = false, imgPriority: ImageRequest.Priority = .low, theme: RedfordTheme? = nil, fetchAvatar: Bool = true) {
     let theme = theme ?? getEnabledTheme()
     self.init(data: data, typePrefix: "\(Post.prefix)_")
-    setupWinstonData(data: data, contentWidth: contentWidth, secondary: secondary, theme: theme, sub: sub, fetchAvatar: fetchAvatar)
+    setupRedfordData(data: data, contentWidth: contentWidth, secondary: secondary, theme: theme, sub: sub, fetchAvatar: fetchAvatar)
   }
   
   convenience init(id: String, sub: Subreddit? = nil) {
     self.init(id: id, typePrefix: "\(Post.prefix)_")
-    let newWinstonData = PostWinstonData()
-    newWinstonData.subreddit = sub
-    self.winstonData = newWinstonData
+    let newRedfordData = PostRedfordData()
+    newRedfordData.subreddit = sub
+    self.RedfordData = newRedfordData
   }
   
   convenience init(id: String, subID: String) {
     self.init(id: id, typePrefix: "\(Post.prefix)_")
-    let newWinstonData = PostWinstonData()
-    newWinstonData._strongSubreddit = Subreddit(id: subID)
-    self.winstonData = newWinstonData
+    let newRedfordData = PostRedfordData()
+    newRedfordData._strongSubreddit = Subreddit(id: subID)
+    self.RedfordData = newRedfordData
   }
   
-  func setupWinstonData(data: PostData? = nil, winstonData: PostWinstonData? = nil, contentWidth: Double = .screenW, secondary: Bool = false, theme: WinstonTheme, sub: Subreddit? = nil, fetchAvatar: Bool = true) {
+  func setupRedfordData(data: PostData? = nil, RedfordData: PostRedfordData? = nil, contentWidth: Double = .screenW, secondary: Bool = false, theme: RedfordTheme, sub: Subreddit? = nil, fetchAvatar: Bool = true) {
     if let data = data ?? self.data {
       let compact = Defaults[.SubredditFeedDefSettings].compactPerSubreddit[sub?.id ?? data.subreddit_id ?? ""] ?? Defaults[.PostLinkDefSettings].compactMode.enabled
-      if self.winstonData == nil { self.winstonData = .init() }
+      if self.RedfordData == nil { self.RedfordData = .init() }
       
-      self.winstonData?.permaURL = URL(string: "https://reddit.com\(data.permalink.escape.urlEncoded)")
+      self.RedfordData?.permaURL = URL(string: "https://reddit.com\(data.permalink.escape.urlEncoded)")
       
       var extractedMedia = mediaExtractor(compact: compact, contentWidth: contentWidth, data, theme: theme)
       var extractedMediaForcedNormal = mediaExtractor(compact: false, contentWidth: contentWidth, data, theme: theme)
@@ -64,11 +64,11 @@ extension Post {
               
               DispatchQueue.main.async {
                 withAnimation {
-                  self.winstonData?.extractedMedia = .video(video)
-                  self.winstonData?.extractedMediaForcedNormal = .video(video)
+                  self.RedfordData?.extractedMedia = .video(video)
+                  self.RedfordData?.extractedMediaForcedNormal = .video(video)
                   
-                  self.winstonData?.postDimensions = getPostDimensions(post: self, winstonData: self.winstonData, columnWidth: contentWidth, secondary: secondary, rawTheme: theme, subId: sub?.id)
-                  self.winstonData?.postDimensionsForcedNormal = getPostDimensions(post: self, winstonData: self.winstonData, columnWidth: contentWidth, secondary: secondary, rawTheme: theme, compact: false)
+                  self.RedfordData?.postDimensions = getPostDimensions(post: self, RedfordData: self.RedfordData, columnWidth: contentWidth, secondary: secondary, rawTheme: theme, subId: sub?.id)
+                  self.RedfordData?.postDimensionsForcedNormal = getPostDimensions(post: self, RedfordData: self.RedfordData, columnWidth: contentWidth, secondary: secondary, rawTheme: theme, compact: false)
                 }
               }
             }
@@ -78,19 +78,19 @@ extension Post {
         break
       }
       
-      self.winstonData?.extractedMedia = extractedMedia
-      self.winstonData?.extractedMediaForcedNormal = extractedMediaForcedNormal
+      self.RedfordData?.extractedMedia = extractedMedia
+      self.RedfordData?.extractedMediaForcedNormal = extractedMediaForcedNormal
       
       
-      self.winstonData?.postDimensions = getPostDimensions(post: self, winstonData: self.winstonData, columnWidth: contentWidth, secondary: secondary, rawTheme: theme, subId: sub?.id)
-      self.winstonData?.postDimensionsForcedNormal = getPostDimensions(post: self, winstonData: self.winstonData, columnWidth: contentWidth, secondary: secondary, rawTheme: theme, compact: false)
+      self.RedfordData?.postDimensions = getPostDimensions(post: self, RedfordData: self.RedfordData, columnWidth: contentWidth, secondary: secondary, rawTheme: theme, subId: sub?.id)
+      self.RedfordData?.postDimensionsForcedNormal = getPostDimensions(post: self, RedfordData: self.RedfordData, columnWidth: contentWidth, secondary: secondary, rawTheme: theme, compact: false)
       
-      self.winstonData?.titleAttr = createTitleTagsAttrString(titleTheme: theme.postLinks.theme.titleText, postData: data, textColor: theme.postLinks.theme.titleText.color.uiColor())
+      self.RedfordData?.titleAttr = createTitleTagsAttrString(titleTheme: theme.postLinks.theme.titleText, postData: data, textColor: theme.postLinks.theme.titleText.color.uiColor())
       
       if let sub {
-        self.winstonData?.subreddit = sub
+        self.RedfordData?.subreddit = sub
       } else {
-        self.winstonData?._strongSubreddit = Subreddit(id: data.subreddit)
+        self.RedfordData?._strongSubreddit = Subreddit(id: data.subreddit)
       }
       
       if fetchAvatar {
@@ -146,14 +146,14 @@ extension Post {
         ]
         let priority = i > 19 ? .veryLow : priorityIMap[priorityIMap.keys.first { $0 > i } ?? 19]!
         let newPost = Post(data: data, sub: sub, contentWidth: contentWidth, imgPriority: i > 7 ? .veryLow : priority, theme: theme, fetchAvatar: false)
-        newPost.data?.winstonSeen = isSeen
+        newPost.data?.RedfordSeen = isSeen
         
         if (isSeen) {
           Task {
             await context.perform {
               let foundPost =  results.first(where: { $0.postID == data.id })
-              newPost.winstonData?.seenCommentsCount = Int(foundPost?.numComments ?? 0)
-              newPost.winstonData?.seenComments = foundPost?.seenComments
+              newPost.RedfordData?.seenCommentsCount = Int(foundPost?.numComments ?? 0)
+              newPost.RedfordData?.seenComments = foundPost?.seenComments
             }
           }
         }
@@ -168,7 +168,7 @@ extension Post {
       }
       
       let repostsAvatars = posts.compactMap { post in
-        if case .repost(let repost) = post.winstonData?.extractedMedia {
+        if case .repost(let repost) = post.RedfordData?.extractedMedia {
           return repost
         }
         return nil
@@ -177,7 +177,7 @@ extension Post {
       Task(priority: .background) { await RedditAPI.shared.updatePostsWithAvatar(posts: repostsAvatars, avatarSize: getEnabledTheme().postLinks.theme.badge.avatar.size) }
       
       let imgRequests: [ImageRequest] = posts.reduce(into: []) { prev, curr in
-        if case .imgs(let imgsExtracted) = curr.winstonData?.extractedMedia {
+        if case .imgs(let imgsExtracted) = curr.RedfordData?.extractedMedia {
           let reqs = imgsExtracted.map { $0.request }
           prev = prev + reqs
         }
@@ -228,7 +228,7 @@ extension Post {
       let flairFilters = prevSubFlairs.map({ FilterData.from($0) })
       DispatchQueue.main.async {
         withAnimation {
-          sub.winstonData?.flairs = flairFilters
+          sub.RedfordData?.flairs = flairFilters
         }
       }
     }
@@ -256,13 +256,13 @@ extension Post {
   
   func toggleSeen(_ seen: Bool? = nil, optimistic: Bool = false) async -> Void {
     let context = PersistenceController.shared.primaryBGContext
-    if (self.data?.winstonSeen ?? false) == seen { return }
+    if (self.data?.RedfordSeen ?? false) == seen { return }
     if optimistic {
-      let prev = self.data?.winstonSeen ?? false
+      let prev = self.data?.RedfordSeen ?? false
       let new = seen == nil ? !prev : seen
       DispatchQueue.main.async {
         withAnimation {
-          if prev != new { self.data?.winstonSeen = new }
+          if prev != new { self.data?.RedfordSeen = new }
         }
       }
     }
@@ -275,7 +275,7 @@ extension Post {
           if seen == nil || seen == false {
             context.delete(foundPost)
             if !optimistic {
-              self.data?.winstonSeen = false
+              self.data?.RedfordSeen = false
             }
           }
         } else if seen == nil || seen == true {
@@ -285,7 +285,7 @@ extension Post {
           if !optimistic {
             DispatchQueue.main.async {
               withAnimation {
-                self.data?.winstonSeen = true
+                self.data?.RedfordSeen = true
               }
             }
           }
@@ -323,7 +323,7 @@ extension Post {
           
           DispatchQueue.main.async {
             withAnimation {
-              self.winstonData?.seenCommentsCount = numComments
+              self.RedfordData?.seenCommentsCount = numComments
             }
           }
         } else {
@@ -334,8 +334,8 @@ extension Post {
           
           DispatchQueue.main.async {
             withAnimation {
-              self.data?.winstonSeen = true
-              self.winstonData?.seenCommentsCount = numComments
+              self.data?.RedfordSeen = true
+              self.RedfordData?.seenCommentsCount = numComments
             }
           }
         }
@@ -366,7 +366,7 @@ extension Post {
           
           DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             withAnimation {
-              self.winstonData?.seenComments = finalSeen
+              self.RedfordData?.seenComments = finalSeen
             }
           }
         }
@@ -398,7 +398,7 @@ extension Post {
           
           DispatchQueue.main.async {
             withAnimation {
-              self.winstonData?.seenComments = finalSeen
+              self.RedfordData?.seenComments = finalSeen
             }
           }
         }
@@ -482,7 +482,7 @@ extension Post {
         //          )
         //          await MainActor.run {
         //            withAnimation {
-        //              childrenWinston.data.append(Comment(data: newComment))
+        //              childrenRedford.data.append(Comment(data: newComment))
         //            }
         //          }
         //        }
@@ -502,7 +502,7 @@ extension Post {
               await MainActor.run {
                 let newData = actualData.data?.children?[0].data
                 self.data = newData
-                setupWinstonData(data: newData, secondary: false, theme: getEnabledTheme())
+                setupRedfordData(data: newData, secondary: false, theme: getEnabledTheme())
               }
             }
           case .second(_):
@@ -575,10 +575,10 @@ extension Post {
   }
   
   func hide(_ hide: Bool) async -> () {
-    if data?.winstonHidden == hide { return }
+    if data?.RedfordHidden == hide { return }
     await MainActor.run {
       withAnimation {
-        data?.winstonHidden = true
+        data?.RedfordHidden = true
       }
     }
     if let name = data?.name {
@@ -587,7 +587,7 @@ extension Post {
   }
 }
 
-enum PostWinstonDataMedia {
+enum PostRedfordDataMedia {
   case link(PreviewModel)
   case video(SharedVideo)
   case imgs([ImageRequest])
@@ -599,8 +599,8 @@ enum PostWinstonDataMedia {
   case user(username: String)
 }
 
-class PostWinstonData: Hashable, ObservableObject {
-  static func == (lhs: PostWinstonData, rhs: PostWinstonData) -> Bool { lhs.permaURL == rhs.permaURL }
+class PostRedfordData: Hashable, ObservableObject {
+  static func == (lhs: PostRedfordData, rhs: PostRedfordData) -> Bool { lhs.permaURL == rhs.permaURL }
   
   var permaURL: URL? = nil
   @Published var extractedMedia: MediaExtractedType? = nil
@@ -619,7 +619,7 @@ class PostWinstonData: Hashable, ObservableObject {
   @Published var linkMedia: PreviewModel?
   @Published var videoMedia: SharedVideo?
   @Published var postBodyAttr: NSAttributedString?
-  @Published var media: PostWinstonDataMedia?
+  @Published var media: PostRedfordDataMedia?
   @Published var seenCommentsCount: Int? = nil
   @Published var seenComments: String? = nil
   
@@ -730,8 +730,8 @@ struct PostData: GenericRedditEntityDataType {
   var secure_media: Media? = nil
   var secure_media_embed: SecureMediaEmbed? = nil
   var preview: Preview? = nil
-  var winstonSeen: Bool? = nil
-  var winstonHidden: Bool? = nil
+  var RedfordSeen: Bool? = nil
+  var RedfordHidden: Bool? = nil
   
   var badgeKit: BadgeKit {
     BadgeKit(

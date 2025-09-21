@@ -1,6 +1,6 @@
 //
 //  PreviewLinkContent.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 30/07/23.
 //
@@ -101,7 +101,7 @@ struct PreviewLinkContentRaw: View, Equatable {
       }
     }
     .highPriorityGesture(TapGesture().onEnded {
-      if let newURL = URL(string: url.absoluteString.replacingOccurrences(of: "https://reddit.com/", with: "winstonapp://")) {
+      if let newURL = URL(string: url.absoluteString.replacingOccurrences(of: "https://reddit.com/", with: "Redfordapp://")) {
         Nav.openURL(newURL)
       }
     })

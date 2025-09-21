@@ -1,6 +1,6 @@
 //
 //  PostSwipePanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 11/08/23.
 //

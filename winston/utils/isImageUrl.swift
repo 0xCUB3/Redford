@@ -1,6 +1,6 @@
 //
 //  isImageUrl.swift
-//  winston
+//  Redford
 //
 //  Created by daniel on 11/11/23.
 //

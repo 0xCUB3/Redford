@@ -1,6 +1,6 @@
 //
 //  sumCGSize.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 06/08/23.
 //

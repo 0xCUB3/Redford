@@ -1,6 +1,6 @@
 //
 //  uploadTheme.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 26/09/23.
 //
@@ -12,7 +12,7 @@ import Foundation
 import Alamofire
 
 extension ThemeStoreAPI {
-  func uploadTheme(theme: WinstonTheme) async -> UploadResponse? {
+  func uploadTheme(theme: RedfordTheme) async -> UploadResponse? {
     var zipURL: URL? = nil
     // Create a zip file with the theme's images
     createZipFile(with: [], theme: theme, completion: { url in

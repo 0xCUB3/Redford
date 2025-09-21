@@ -1,6 +1,6 @@
 //
 //  ThemeEditPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 08/09/23.
 //
@@ -16,8 +16,8 @@ enum ThemeEditPanels {
 }
 
 struct ThemeEditPanel: View {
-  let theme: WinstonTheme
-  @State private var draftTheme: WinstonTheme = defaultTheme
+  let theme: RedfordTheme
+  @State private var draftTheme: RedfordTheme = defaultTheme
   @State private var iconPickerOpen = false
   @State private var themeColor: Color = .blue
   @State private var navPath: [ThemeEditPanels] = []

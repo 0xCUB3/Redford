@@ -1,6 +1,6 @@
 //
 //  BGBlur.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 28/12/23.
 //

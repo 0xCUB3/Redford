@@ -1,6 +1,6 @@
 //
 //  SubredditsStack.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 19/09/23.
 //
@@ -39,7 +39,7 @@ struct SubredditsStack: View {
                 .equatable()
                 .id("\(sub.id)-sub-first-tab")
             case .reddit(.post(let post)):
-              if let sub = post.winstonData?.subreddit {
+              if let sub = post.RedfordData?.subreddit {
                 PostView(post: post, subreddit: sub)
                   .id("\(post.id)-post-first-tab")
               }
@@ -51,7 +51,7 @@ struct SubredditsStack: View {
             }
           } else {
             VStack(spacing: 24) {
-              Image(.winstonEyes)
+              Image(.RedfordEyes)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200)

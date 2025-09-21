@@ -1,6 +1,6 @@
 //
 //  AccountSwitcherTrigger.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 27/11/23.
 //

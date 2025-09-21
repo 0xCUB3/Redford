@@ -1,6 +1,6 @@
 //
 //  FilteredSubredditsSettings.swift
-//  winston
+//  Redford
 //
 //  Created by Ethan Bills on 9/12/23.
 //

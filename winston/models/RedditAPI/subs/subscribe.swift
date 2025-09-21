@@ -1,6 +1,6 @@
 //
 //  subscribe.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 19/07/23.
 //

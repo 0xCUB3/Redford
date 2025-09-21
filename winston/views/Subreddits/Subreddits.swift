@@ -1,6 +1,6 @@
 //
 //  Posts.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 24/06/23.
 //
@@ -24,8 +24,8 @@ struct Subreddits: View, Equatable {
     self.currentCredentialID = currentCredentialID
     self._selectedSub = selectedSub
     self.loaded = loaded
-    self._subreddits = FetchRequest<CachedSub>(sortDescriptors: [NSSortDescriptor(key: "display_name", ascending: true)], predicate: NSPredicate(format: "winstonCredentialID == %@", currentCredentialID as CVarArg), animation: .default)
-    self._multis = FetchRequest<CachedMulti>(sortDescriptors: [NSSortDescriptor(key: "display_name", ascending: true)], predicate: NSPredicate(format: "winstonCredentialID == %@", currentCredentialID as CVarArg), animation: .default)
+    self._subreddits = FetchRequest<CachedSub>(sortDescriptors: [NSSortDescriptor(key: "display_name", ascending: true)], predicate: NSPredicate(format: "RedfordCredentialID == %@", currentCredentialID as CVarArg), animation: .default)
+    self._multis = FetchRequest<CachedMulti>(sortDescriptors: [NSSortDescriptor(key: "display_name", ascending: true)], predicate: NSPredicate(format: "RedfordCredentialID == %@", currentCredentialID as CVarArg), animation: .default)
   }
   
   @FetchRequest private var subreddits: FetchedResults<CachedSub>
@@ -86,8 +86,8 @@ struct Subreddits: View, Equatable {
           
           //          Section{
           //            UpsellCard(upsellName: "themesUpsell_01", {
-          //                Text("Tired of Winstons current look? Try the theme editor in settings now!")
-          //                .winstonShiny()
+          //                Text("Tired of Redfords current look? Try the theme editor in settings now!")
+          //                .RedfordShiny()
           //              .fontWeight(.semibold)
           //              .font(.system(size: 15))
           //            })

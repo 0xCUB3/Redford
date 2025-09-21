@@ -1,6 +1,6 @@
 //
 //  GlobalLoader.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 08/08/23.
 //

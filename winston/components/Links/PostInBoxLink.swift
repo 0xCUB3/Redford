@@ -1,6 +1,6 @@
 //
 //  PinnedPost.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 23/07/23.
 //

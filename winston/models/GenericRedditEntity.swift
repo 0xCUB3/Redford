@@ -1,6 +1,6 @@
 //
 //  GenericRedditEntity.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 30/06/23.
 //
@@ -17,7 +17,7 @@ protocol GenericRedditEntityDataType: Codable, Hashable, Identifiable {
 class GenericRedditEntity<T: GenericRedditEntityDataType, B: Hashable>: Identifiable, Hashable, ObservableObject, Observable, Codable,  _DefaultsSerializable {
   func hash(into hasher: inout Hasher) {
 //    hasher.combine(data)
-//    hasher.combine(childrenWinston.data)
+//    hasher.combine(childrenRedford.data)
     hasher.combine(id)
     hasher.combine(typePrefix)
 //    hasher.combine(data)
@@ -41,7 +41,7 @@ class GenericRedditEntity<T: GenericRedditEntityDataType, B: Hashable>: Identifi
   
   var selfPrefix: String { "" }
   
-  @Published var winstonData: B? = nil
+  @Published var RedfordData: B? = nil
   @Published var _id: String
   var id: String {
     get {
@@ -56,7 +56,7 @@ class GenericRedditEntity<T: GenericRedditEntityDataType, B: Hashable>: Identifi
   var kind: String?
   
   enum CodingKeys: CodingKey {
-    case _id, loading, typePrefix, kind, data, childrenWinstonData
+    case _id, loading, typePrefix, kind, data, childrenRedfordData
   }
 
   required init(from decoder: Decoder) throws {
@@ -79,11 +79,11 @@ class GenericRedditEntity<T: GenericRedditEntityDataType, B: Hashable>: Identifi
   
   let redditAPI: RedditAPI = .shared
   var anyCancellables: [AnyCancellable]? = nil
-  @Published var childrenWinston: ObservableArray<GenericRedditEntity<T, B>> = ObservableArray<GenericRedditEntity<T, B>>(array: [])
-  var parentWinston: ObservableArray<GenericRedditEntity<T, B>>?
+  @Published var childrenRedford: ObservableArray<GenericRedditEntity<T, B>> = ObservableArray<GenericRedditEntity<T, B>>(array: [])
+  var parentRedford: ObservableArray<GenericRedditEntity<T, B>>?
   
   private func setupWatchers() {
-    anyCancellables?.append(childrenWinston.objectWillChange.sink { [weak self] (_) in
+    anyCancellables?.append(childrenRedford.objectWillChange.sink { [weak self] (_) in
         self?.objectWillChange.send()
     })
   }
@@ -113,7 +113,7 @@ class GenericRedditEntity<T: GenericRedditEntityDataType, B: Hashable>: Identifi
     let copy = GenericRedditEntity<T, B>(id: id, typePrefix: typePrefix)
     copy.data = data
     copy.kind = kind
-    copy.childrenWinston = childrenWinston
+    copy.childrenRedford = childrenRedford
     return copy
   }
   

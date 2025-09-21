@@ -1,6 +1,6 @@
 //
 //  getInfo.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 29/07/23.
 //

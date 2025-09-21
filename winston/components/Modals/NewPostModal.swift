@@ -1,6 +1,6 @@
 ////
 ////  NewPostModal.swift
-////  winston
+////  Redford
 ////
 ////  Created by Igor Marcossi on 24/07/23.
 ////
@@ -61,7 +61,7 @@ struct NewPostGalleryItem: Codable {
 //  }
 //  var body: some View {
 //    let fadeWidth: CGFloat = 16
-//    if subreddit.data?.winstonFlairs == nil || (subreddit.data?.winstonFlairs?.count ?? 0) != 0 {
+//    if subreddit.data?.RedfordFlairs == nil || (subreddit.data?.RedfordFlairs?.count ?? 0) != 0 {
 //      HStack(spacing: 4) {
 //        HStack {
 //          HStack {
@@ -96,7 +96,7 @@ struct NewPostGalleryItem: Codable {
 //        
 //        ScrollView(.horizontal, showsIndicators: false) {
 //          HStack {
-//            if let flairs = subreddit.data?.winstonFlairs {
+//            if let flairs = subreddit.data?.RedfordFlairs {
 //              if searchQuery.debounced.isEmpty {
 //                ForEach(flairs.filter({ $0 != selectedFlair })) { flair in
 //                  FlairButton(selected: selectedFlair == flair, onSelect: selectFlair, flair: flair)

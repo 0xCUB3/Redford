@@ -1,6 +1,6 @@
 //
 //  simpleHighlight.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/01/24.
 //

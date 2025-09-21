@@ -1,6 +1,6 @@
 //
 //  GeneralPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 17/08/23.
 //
@@ -30,7 +30,7 @@ struct GeneralPanel: View {
         Section("Backup"){
           WListButton {
             let date = Date()
-            let file = exportUserDefaultsToJSON(fileName: "WinstonSettings-" + date.ISO8601Format() + ".json")
+            let file = exportUserDefaultsToJSON(fileName: "RedfordSettings-" + date.ISO8601Format() + ".json")
             if let file {
               isMoving.toggle()
               settingsFileURL = file
@@ -140,7 +140,7 @@ struct GeneralPanel: View {
   }
   
   func clearCache() {
-    (try? DataCache(name: "lo.cafe.winston.datacache"))?.flush()
+    (try? DataCache(name: "lo.cafe.Redford.datacache"))?.flush()
     Nuke.ImageCache.shared.removeAll()
     Nuke.DataLoader.sharedUrlCache.removeAllCachedResponses()
     (ImagePipeline.shared.configuration.dataLoader as? DataLoader)?.session.configuration.urlCache?.removeAllCachedResponses()

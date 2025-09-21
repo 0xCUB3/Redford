@@ -2,7 +2,7 @@ import MorphingStain from "./MorphingStain"
 
 const BGDimmer = ({ dimBG }) => {
   return (
-    <div className="winstonBlurMask" style={{ opacity: dimBG ? 1 : 0 }}>
+    <div className="RedfordBlurMask" style={{ opacity: dimBG ? 1 : 0 }}>
       {/* <div className="winHelper">
         <MorphingStain
           size={1000}

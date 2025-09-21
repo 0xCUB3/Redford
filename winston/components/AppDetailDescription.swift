@@ -1,6 +1,6 @@
 //
 //  AppDetailDescription.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 05/10/23.
 //

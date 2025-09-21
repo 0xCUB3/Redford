@@ -1,6 +1,6 @@
 //
 //  fetchUsers.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 04/07/23.
 //
@@ -44,13 +44,13 @@ extension RedditAPI {
         case .first(let post):
           if let author = post.data?.author_fullname {
             DispatchQueue.main.async {
-              post.winstonData?.avatarImageRequest = avatarsDict[author]
+              post.RedfordData?.avatarImageRequest = avatarsDict[author]
             }
           }
         case .second(let comment):
           if let authorFullname = comment.data?.author_fullname {
             DispatchQueue.main.async { [avatarsDict] in
-              comment.winstonData?.avatarImageRequest = avatarsDict[authorFullname]
+              comment.RedfordData?.avatarImageRequest = avatarsDict[authorFullname]
             }
           }
         }
@@ -65,10 +65,10 @@ extension RedditAPI {
     comments.forEach { comment in
       if let authorFullname = comment.data?.author_fullname {
         DispatchQueue.main.async { [avatarsDict] in
-          comment.winstonData?.avatarImageRequest = avatarsDict[authorFullname]
+          comment.RedfordData?.avatarImageRequest = avatarsDict[authorFullname]
         }
       }
-      Task { [avatarsDict] in await self.updateCommentsWithAvatar(comments: comment.childrenWinston.data, avatarSize: avatarSize, presentAvatarsDict: avatarsDict) }
+      Task { [avatarsDict] in await self.updateCommentsWithAvatar(comments: comment.childrenRedford.data, avatarSize: avatarSize, presentAvatarsDict: avatarsDict) }
     }
   }
   
@@ -78,7 +78,7 @@ extension RedditAPI {
       posts.forEach { post in
         if let author = post.data?.author_fullname {
           DispatchQueue.main.async { [avatarsDict] in
-            post.winstonData?.avatarImageRequest = avatarsDict[author]
+            post.RedfordData?.avatarImageRequest = avatarsDict[author]
           }
         }
       }
@@ -86,11 +86,11 @@ extension RedditAPI {
   }
   
   func updateAvatarURL(names: [String], avatarSize: Double) async -> [String:ImageRequest]? {
-    let nonWinstonAppNames = names.filter { $0 != SAMPLE_USER_AVATAR }
+    let nonRedfordAppNames = names.filter { $0 != SAMPLE_USER_AVATAR }
     var returnDict: [String:ImageRequest] = [:]
-    returnDict[SAMPLE_USER_AVATAR] = ImageRequest(stringLiteral: "https://winston.cafe/icons/iconExplode.png")
+    returnDict[SAMPLE_USER_AVATAR] = ImageRequest(stringLiteral: "https://Redford.cafe/icons/iconExplode.png")
     
-    if !nonWinstonAppNames.isEmpty, let data = await self.fetchUsers(nonWinstonAppNames) {
+    if !nonRedfordAppNames.isEmpty, let data = await self.fetchUsers(nonRedfordAppNames) {
       //      let avatarSize = Defaults[]
       var reqs: [ImageRequest] = []
       let newDict = data.compactMapValues { val in
@@ -143,7 +143,7 @@ func getNamesFromComments(_ comments: [Comment]) -> [String] {
     if let fullname = comment.data?.author_fullname {
       namesArr.append(fullname)
     }
-    namesArr += getNamesFromComments(comment.childrenWinston.data)
+    namesArr += getNamesFromComments(comment.childrenRedford.data)
   }
   return namesArr
 }

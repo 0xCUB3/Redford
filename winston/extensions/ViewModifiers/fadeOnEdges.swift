@@ -1,6 +1,6 @@
 //
 //  fadeOnEdges.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 19/12/23.
 //

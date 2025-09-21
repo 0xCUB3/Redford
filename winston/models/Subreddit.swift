@@ -1,6 +1,6 @@
 //
 //  SubredditData.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 26/06/23.
 //
@@ -11,7 +11,7 @@ import Defaults
 import SwiftUI
 
 
-typealias Subreddit = GenericRedditEntity<SubredditData, SubredditWinstonData>
+typealias Subreddit = GenericRedditEntity<SubredditData, SubredditRedfordData>
 
 extension Subreddit {
   static var prefix = "t5"
@@ -19,17 +19,17 @@ extension Subreddit {
   
   convenience init(data: T) {
     self.init(data: data, typePrefix: "\(Subreddit.prefix)_")
-    self.winstonData = SubredditWinstonData()
+    self.RedfordData = SubredditRedfordData()
   }
   
   convenience init(id: String) {
     self.init(id: id, typePrefix: "\(Subreddit.prefix)_")
-    self.winstonData = SubredditWinstonData()
+    self.RedfordData = SubredditRedfordData()
   }
   
   convenience init(entity: CachedSub) {
     self.init(id: entity.uuid ?? UUID().uuidString, typePrefix: "\(Subreddit.prefix)_")
-    self.winstonData = SubredditWinstonData()
+    self.RedfordData = SubredditRedfordData()
     self.data = SubredditData(entity: entity)
   }
   
@@ -82,7 +82,7 @@ extension Subreddit {
     if let data = data {
       @Sendable func doToggle() {
         let fetchRequest = NSFetchRequest<CachedSub>(entityName: "CachedSub")
-        fetchRequest.predicate = NSPredicate(format: "winstonCredentialID == %@", currentCredentialID as CVarArg)
+        fetchRequest.predicate = NSPredicate(format: "RedfordCredentialID == %@", currentCredentialID as CVarArg)
         guard let results = (context.performAndWait { return try? context.fetch(fetchRequest) }) else { return }
         let foundSub = context.performAndWait { results.first(where: { $0.name == self.data?.name }) }
         
@@ -125,12 +125,12 @@ extension Subreddit {
   }
   
   func getFlairs() async -> [Flair]? {
-    if self.data?.winstonFlairs != nil { return self.data?.winstonFlairs }
+    if self.data?.RedfordFlairs != nil { return self.data?.RedfordFlairs }
     
     if let data = (await RedditAPI.shared.getFlairs(data?.display_name ?? id)) {
       _ = await MainActor.run {
         withAnimation {
-          self.data?.winstonFlairs = data
+          self.data?.RedfordFlairs = data
           return data
         }
       }
@@ -158,7 +158,7 @@ extension Subreddit {
       let flairFilters = prevSubFlairs.map({ FilterData.from($0) })
       DispatchQueue.main.async {
         withAnimation {
-          self.winstonData?.flairs = flairFilters
+          self.RedfordData?.flairs = flairFilters
           callback?(flairFilters)
         }
       }
@@ -240,8 +240,8 @@ extension Subreddit {
 //
 //}
 
-class SubredditWinstonData: Hashable, ObservableObject {
-  static func == (lhs: SubredditWinstonData, rhs: SubredditWinstonData) -> Bool { lhs.flairs == rhs.flairs }
+class SubredditRedfordData: Hashable, ObservableObject {
+  static func == (lhs: SubredditRedfordData, rhs: SubredditRedfordData) -> Bool { lhs.flairs == rhs.flairs }
   
   @Published var flairs: [FilterData] = []
   
@@ -319,7 +319,7 @@ struct SubredditData: Codable, GenericRedditEntityDataType, Defaults.Serializabl
   var url: String
   var created_utc: Double? = nil
   var user_is_contributor: Bool? = nil
-  var winstonFlairs: [Flair]? = nil
+  var RedfordFlairs: [Flair]? = nil
   //  let comment_contribution_settings: CommentContributionSettings
   //  let header_size: [Int]?
   //  let user_flair_position: String?
@@ -368,7 +368,7 @@ struct SubredditData: Codable, GenericRedditEntityDataType, Defaults.Serializabl
   
   
   enum CodingKeys: String, CodingKey {
-    case user_flair_background_color, submit_text_html, restrict_posting, user_is_banned, free_form_reports, wiki_enabled, user_is_muted, user_can_flair_in_sr, display_name, header_img, title, allow_galleries, icon_size, primary_color, active_user_count, icon_img, display_name_prefixed, accounts_active, public_traffic, subscribers, name, quarantine, hide_ads, prediction_leaderboard_entry_type, emojis_enabled, advertiser_category, public_description, comment_score_hide_mins, allow_predictions, user_has_favorited, user_flair_template_id, community_icon, banner_background_image, original_content_tag_enabled, community_reviewed, submit_text, description_html, spoilers_enabled, allow_talks, is_enrolled_in_new_modmail, key_color, can_assign_user_flair, created, show_media_preview, user_is_subscriber, allow_videogifs, should_archive_posts, user_flair_type, allow_polls, public_description_html, allow_videos, banner_img, user_flair_text, banner_background_color, show_media, id, user_is_moderator, description, is_chat_post_feature_enabled, submit_link_label, user_flair_text_color, restrict_commenting, user_flair_css_class, allow_images, url, created_utc, user_is_contributor, winstonFlairs, subreddit_type, over18
+    case user_flair_background_color, submit_text_html, restrict_posting, user_is_banned, free_form_reports, wiki_enabled, user_is_muted, user_can_flair_in_sr, display_name, header_img, title, allow_galleries, icon_size, primary_color, active_user_count, icon_img, display_name_prefixed, accounts_active, public_traffic, subscribers, name, quarantine, hide_ads, prediction_leaderboard_entry_type, emojis_enabled, advertiser_category, public_description, comment_score_hide_mins, allow_predictions, user_has_favorited, user_flair_template_id, community_icon, banner_background_image, original_content_tag_enabled, community_reviewed, submit_text, description_html, spoilers_enabled, allow_talks, is_enrolled_in_new_modmail, key_color, can_assign_user_flair, created, show_media_preview, user_is_subscriber, allow_videogifs, should_archive_posts, user_flair_type, allow_polls, public_description_html, allow_videos, banner_img, user_flair_text, banner_background_color, show_media, id, user_is_moderator, description, is_chat_post_feature_enabled, submit_link_label, user_flair_text_color, restrict_commenting, user_flair_css_class, allow_images, url, created_utc, user_is_contributor, RedfordFlairs, subreddit_type, over18
   }
   
   init(id: String) {
@@ -438,7 +438,7 @@ struct SubredditData: Codable, GenericRedditEntityDataType, Defaults.Serializabl
     self.subreddit_type = "public"
     self.created_utc = nil
     self.user_is_contributor = nil
-    self.winstonFlairs = nil
+    self.RedfordFlairs = nil
     self.title = nil
     
     self.allow_galleries = nil
@@ -534,7 +534,7 @@ struct SubredditData: Codable, GenericRedditEntityDataType, Defaults.Serializabl
     self.subreddit_type = "public"
     self.created_utc = nil
     self.user_is_contributor = nil
-    self.winstonFlairs = nil
+    self.RedfordFlairs = nil
     self.title = nil
     
     
@@ -652,7 +652,7 @@ struct SubredditData: Codable, GenericRedditEntityDataType, Defaults.Serializabl
     self.url = try container.decode(String.self, forKey: .url)
     self.created_utc = try container.decodeIfPresent(Double.self, forKey: .created_utc)
     self.user_is_contributor = try container.decodeIfPresent(Bool.self, forKey: .user_is_contributor)
-    self.winstonFlairs = try container.decodeIfPresent([Flair].self, forKey: .winstonFlairs)
+    self.RedfordFlairs = try container.decodeIfPresent([Flair].self, forKey: .RedfordFlairs)
     self.over18 = try container.decodeIfPresent(Bool.self, forKey: .over18)
   }
 }

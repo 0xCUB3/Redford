@@ -1,6 +1,6 @@
 //
 //  Comment.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 28/06/23.
 //
@@ -82,7 +82,7 @@ struct CommentLink: View, Equatable {
   var parentElement: CommentParentElement? = nil
   
   @ObservedObject var comment: Comment
-  @ObservedObject var commentWinstonData: CommentWinstonData
+  @ObservedObject var commentRedfordData: CommentRedfordData
   @ObservedObject var children: ObservableArray<Comment>
 
   var body: some View {
@@ -99,15 +99,15 @@ struct CommentLink: View, Equatable {
               CommentLinkMore(arrowKinds: arrowKinds, comment: comment, post: post, postFullname: postFullname, parentElement: parentElement, indentLines: indentLines)
             }
           } else {
-            CommentLinkContent(highlightID: highlightID, seenComments: seenComments, showReplies: showReplies, arrowKinds: arrowKinds, indentLines: indentLines, lineLimit: lineLimit, post: post, comment: comment, winstonData: commentWinstonData, avatarsURL: avatarsURL)
+            CommentLinkContent(highlightID: highlightID, seenComments: seenComments, showReplies: showReplies, arrowKinds: arrowKinds, indentLines: indentLines, lineLimit: lineLimit, post: post, comment: comment, RedfordData: commentRedfordData, avatarsURL: avatarsURL)
           }
         }
         
         if !collapsed && showReplies {
           ForEach(Array(children.data.enumerated()), id: \.element.id) { index, commentChild in
             let childrenCount = children.data.count
-            if let _ = commentChild.data, let childCommentWinstonData = commentChild.winstonData {
-              CommentLink(post: post, arrowKinds: arrowKinds.map { $0.child } + [(childrenCount - 1 == index ? ArrowKind.curve : ArrowKind.straightCurve)], postFullname: postFullname, seenComments: seenComments, parentElement: .comment(comment), comment: commentChild, commentWinstonData: childCommentWinstonData, children: commentChild.childrenWinston)
+            if let _ = commentChild.data, let childCommentRedfordData = commentChild.RedfordData {
+              CommentLink(post: post, arrowKinds: arrowKinds.map { $0.child } + [(childrenCount - 1 == index ? ArrowKind.curve : ArrowKind.straightCurve)], postFullname: postFullname, seenComments: seenComments, parentElement: .comment(comment), comment: commentChild, commentRedfordData: childCommentRedfordData, children: commentChild.childrenRedford)
               //                .equatable()
             }
           }

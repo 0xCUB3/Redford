@@ -1,6 +1,6 @@
 //
 //  SubredditIcon.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 13/07/23.
 //
@@ -22,7 +22,7 @@ import NukeUI
 ////    }())
 ////    
 ////    $0.imageCache = ImageCache()
-////    $0.dataCache = try? DataCache(name: "lo.cafe.winston-cache")
+////    $0.dataCache = try? DataCache(name: "lo.cafe.redford-cache")
 ////  }
 //  
 //  var body: some View {

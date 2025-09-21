@@ -1,6 +1,6 @@
 //
 //  CachedSub+CoreDataClass.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 25/08/23.
 //

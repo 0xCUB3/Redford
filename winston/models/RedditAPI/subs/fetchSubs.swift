@@ -1,6 +1,6 @@
 //
 //  fetchSubs.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 28/06/23.
 //
@@ -51,7 +51,7 @@ extension RedditAPI {
       let context = PersistenceController.shared.container.viewContext
       
       let fetchRequest = NSFetchRequest<CachedSub>(entityName: "CachedSub")
-      fetchRequest.predicate = NSPredicate(format: "winstonCredentialID == %@", currentCredentialID as CVarArg)
+      fetchRequest.predicate = NSPredicate(format: "RedfordCredentialID == %@", currentCredentialID as CVarArg)
       let results = (context.performAndWait { try? context.fetch(fetchRequest) }) ?? []
       results.forEach { cachedSub in
         context.performAndWait {

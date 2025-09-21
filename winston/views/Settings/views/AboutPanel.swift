@@ -1,6 +1,6 @@
 //
 //  AboutPanel.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 01/08/23.
 //
@@ -17,13 +17,13 @@ struct AboutPanel: View {
       Group {
         Section {
           HStack {
-            Image("winstonNoBG")
+            Image("RedfordNoBG")
               .resizable()
               .scaledToFit()
               .frame(width: 48, height: 48)
             
             VStack(alignment: .leading) {
-              Text("Winston")
+              Text("Redford")
                 .fontSize(20, .bold)
               HStack{
                 Text("Beta v" + (appVersion ?? "-1") + " Build \(build ?? "-1")")
@@ -31,7 +31,7 @@ struct AboutPanel: View {
             }
           }
           
-          Text("Winston is developed by the lo.cafe team, a group of friends making amazing software together.")
+          Text("Redford is developed by the lo.cafe team, a group of friends making amazing software together.")
           
           WListButton {
             openURL(URL(string: "https://lo.cafe")!)
@@ -60,11 +60,11 @@ struct AboutPanel: View {
         }
         
         Section {
-          Text("Winston is a free and open source software, therefore it isn't against Reddit's policies.")
+          Text("Redford is a free and open source software, therefore it isn't against Reddit's policies.")
           WListButton {
-            openURL(URL(string: "https://github.com/Kinark/winston")!)
+            openURL(URL(string: "https://github.com/Kinark/Redford")!)
           } label: {
-            Label("Check out Winston's Source Code", systemImage: "arrow.branch")
+            Label("Check out Redford's Source Code", systemImage: "arrow.branch")
           }
         }
       }

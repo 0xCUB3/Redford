@@ -1,6 +1,6 @@
 //
 //  OnboardingCreateApp.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 01/08/23.
 //

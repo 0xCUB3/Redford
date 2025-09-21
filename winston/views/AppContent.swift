@@ -1,6 +1,6 @@
 //
 //  AppContent.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 31/12/23.
 //
@@ -15,7 +15,7 @@ struct AppContent: View {
   @Default(.ThemesDefSettings) private var themesDefSettings
   @Default(.GeneralDefSettings) private var generalDefSettings
 
-  var selectedTheme: WinstonTheme { themesDefSettings.themesPresets.first { $0.id == themesDefSettings.selectedThemeID } ?? defaultTheme }
+  var selectedTheme: RedfordTheme { themesDefSettings.themesPresets.first { $0.id == themesDefSettings.selectedThemeID } ?? defaultTheme }
   
   let biometrics = Biometrics()
   @State private var isAuthenticating = false

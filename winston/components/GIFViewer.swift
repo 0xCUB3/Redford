@@ -1,6 +1,6 @@
 //
 //  GIFViewer.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 29/10/23.
 //

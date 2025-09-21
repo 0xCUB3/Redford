@@ -1,6 +1,6 @@
 //
 //  PostsTheme.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/09/23.
 //
@@ -89,7 +89,7 @@ struct PostLinkTheme: Codable, Hashable, Equatable {
     var type: ImgType
     var color: ColorSchemes<ThemeColor>
     enum ImgType: String, Codable, Hashable, Equatable {
-      case winston, icon
+      case Redford, icon
     }
   }
 }

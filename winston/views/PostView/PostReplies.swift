@@ -1,6 +1,6 @@
 //
 //  PostReplies.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 31/07/23.
 //
@@ -34,7 +34,7 @@ struct PostReplies: View {
       Task(priority: .background) {
         _ = await RedditAPI.shared.updateCommentsWithAvatar(comments: newComments, avatarSize: selectedTheme.comments.theme.badge.avatar.size)
       }
-      newComments.forEach { $0.parentWinston = comments }
+      newComments.forEach { $0.parentRedford = comments }
       await MainActor.run {
         withAnimation {
           comments.data = newComments
@@ -79,8 +79,8 @@ struct PostReplies: View {
               .clipped()
               .id("\(comment.id)-top-decoration")
             
-            if let commentWinstonData = comment.winstonData {
-              CommentLink(highlightID: ignoreSpecificComment ? nil : highlightID, post: post, subreddit: subreddit, postFullname: postFullname, seenComments: seenComments, parentElement: .post(comments), comment: comment, commentWinstonData: commentWinstonData, children: comment.childrenWinston)
+            if let commentRedfordData = comment.RedfordData {
+              CommentLink(highlightID: ignoreSpecificComment ? nil : highlightID, post: post, subreddit: subreddit, postFullname: postFullname, seenComments: seenComments, parentElement: .post(comments), comment: comment, commentRedfordData: commentRedfordData, children: comment.childrenRedford)
                 .if(comments.data.firstIndex(of: comment) != nil) { view in
                   view.anchorPreference(
                     key: CommentUtils.AnchorsKey.self,
@@ -146,7 +146,7 @@ struct PostReplies: View {
                 await asyncFetch(post.data == nil)
               }
             }
-            withAnimation { seenComments = post.winstonData?.seenComments }
+            withAnimation { seenComments = post.RedfordData?.seenComments }
           }
           .id("loading-comments")
       } else if comments.data.count == 0 {

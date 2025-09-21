@@ -1,6 +1,6 @@
 //
 //  GeneralDefSettings.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 15/12/23.
 //
@@ -14,7 +14,7 @@ struct GeneralDefSettings: Equatable, Hashable, Codable, Defaults.Serializable {
   }
   
   var redditCredentialSelectedID: UUID? = nil
-  var redditAPIUserAgent: String = "ios:lo.cafe.winston:v0.1.0 (by /u/Kinark)"
+  var redditAPIUserAgent: String = "ios:lo.cafe.Redford:v0.1.0 (by /u/Kinark)"
   var onboardingState: OnboardingState = .unknown
   var lastSeenAnnouncementTimeStamp: Int = 0
   var useAuth: Bool = false

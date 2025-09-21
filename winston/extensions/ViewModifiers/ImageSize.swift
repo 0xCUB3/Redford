@@ -1,6 +1,6 @@
 //
 //  ImageSize.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 30/12/23.
 //

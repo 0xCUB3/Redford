@@ -1,6 +1,6 @@
 //
 //  UserSavedLinks.swift
-//  winston
+//  Redford
 //
 //  Created by Ethan Bills on 11/16/23.
 //
@@ -26,14 +26,14 @@ struct MixedContentFeedView: View {
   
 //  @Environment(\.colorScheme) private var cs
   
-  func updateContentsCalcs(_ newTheme: WinstonTheme) {
+  func updateContentsCalcs(_ newTheme: RedfordTheme) {
     Task(priority: .background) {
       mixedMediaLinks.forEach {
         switch $0 {
         case .first(let post):
-          post.setupWinstonData(data: post.data, winstonData: post.winstonData, theme: newTheme, sub: subreddit, fetchAvatar: false)
+          post.setupRedfordData(data: post.data, RedfordData: post.RedfordData, theme: newTheme, sub: subreddit, fetchAvatar: false)
         case .second(let comment):
-          comment.setupWinstonData()
+          comment.setupRedfordData()
           break
         }
       }

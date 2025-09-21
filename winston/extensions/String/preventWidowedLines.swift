@@ -1,6 +1,6 @@
 //
 //  preventWidowedLines.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 02/01/24.
 //

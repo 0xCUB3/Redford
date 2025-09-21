@@ -1,6 +1,6 @@
 //
 //  Post.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 28/06/23.
 //
@@ -61,7 +61,7 @@ struct PostLink: View, Equatable, Identifiable {
 
 extension View {
   func postLinkStyle(showSubBottom: Bool = false, post: Post, sub: Subreddit, theme: SubPostsListTheme, size: CGSize, secondary: Bool, openPost: @escaping () -> (), readPostOnScroll: Bool, hideReadPosts: Bool) -> some View {
-    let seen = (post.data?.winstonSeen ?? false)
+    let seen = (post.data?.RedfordSeen ?? false)
     let fadeReadPosts = theme.theme.unseenType == .fade
     return self
       .padding(EdgeInsets(top: theme.theme.innerPadding.vertical, leading: theme.theme.innerPadding.horizontal, bottom: theme.theme.innerPadding.vertical, trailing: theme.theme.innerPadding.horizontal))

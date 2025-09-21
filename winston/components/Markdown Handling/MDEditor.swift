@@ -1,6 +1,6 @@
 //
 //  MDEditor.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 27/07/23.
 //
@@ -21,7 +21,7 @@ private let placeholders: [String] = [
   "— Don’t you hate that?\n— What?\n— Uncomfortable silences...",
   "All we have to decide is what to do with the time that is given us...",
   "FLY, YOU FOOLS! ...yes, it's fly, not run...",
-  "Winston, I mean, Houston, we have a problem!...",
+  "Redford, I mean, Houston, we have a problem!...",
   "I would have gone with you to the end, into the very fires of mordor...",
 ]
 
@@ -40,7 +40,7 @@ struct MDEditor: View {
           .scrollContentBackground(.hidden)
           .background(.clear)
         // The HighlightedTextEditor package currently does not integrate well with iOS 17's predictive text. It will be disabled until that issue is remedied.
-        // HighlightedTextEditor(text: $text, highlightRules: winstonMDEditorPreset)
+        // HighlightedTextEditor(text: $text, highlightRules: RedfordMDEditorPreset)
 //          .introspect { editor in
 //            editor.textView.backgroundColor = .clear
 //          }

@@ -1,6 +1,6 @@
 //
 //  urlCleaner.swift
-//  winston
+//  Redford
 //
 //  Created by Daniel Inama on 23/09/23.
 //

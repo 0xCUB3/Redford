@@ -1,6 +1,6 @@
 ////
 ////  EnhancedVideoPlayer.swift
-////  winston
+////  Redford
 ////
 ////  Created by Igor Marcossi on 30/08/23.
 ////

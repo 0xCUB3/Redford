@@ -1,6 +1,6 @@
 //
 //  redditURLParser.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 29/07/23.
 //
@@ -18,7 +18,7 @@ enum RedditURLType: Equatable, Hashable {
 
 func parseRedditURL(_ rawUrlString: String) -> RedditURLType {
   let urlString = rawUrlString
-    .replacingOccurrences(of: "winstonapp://", with: "https://app.winston.cafe/")
+    .replacingOccurrences(of: "Redfordapp://", with: "https://app.Redford.cafe/")
     .replacingOccurrences(of: #"(www\.|old\.)?reddit\.com\/"#, with: "", options: .regularExpression)
   guard let urlComponents = URLComponents(string: urlString) else {
     return .other(link: urlString)
@@ -26,7 +26,7 @@ func parseRedditURL(_ rawUrlString: String) -> RedditURLType {
   
   let pathComponents = urlComponents.path.components(separatedBy: "/").filter({ !$0.isEmpty })
     
-  if urlComponents.host?.hasSuffix("reddit.com") == true || urlComponents.host?.hasSuffix("app.winston.cafe") == true, pathComponents.count > 1 {
+  if urlComponents.host?.hasSuffix("reddit.com") == true || urlComponents.host?.hasSuffix("app.Redford.cafe") == true, pathComponents.count > 1 {
     switch pathComponents[0] {
     case "r":
       let subredditName = pathComponents[1]

@@ -1,6 +1,6 @@
 //
 //  Search.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 24/06/23.
 //
@@ -136,16 +136,16 @@ struct Search: View {
             case .post:
               if let dummyAllSub = dummyAllSub {
                 ForEach(resultPosts.data) { post in
-                  if let winstonData = post.winstonData {
-                    //                      SwipeRevolution(size: winstonData.postDimensions.size, actionsSet: postSwipeActions, entity: post) { controller in
+                  if let RedfordData = post.RedfordData {
+                    //                      SwipeRevolution(size: RedfordData.postDimensions.size, actionsSet: postSwipeActions, entity: post) { controller in
                     PostLink(id: post.id, theme: theme.postLinks, showSub: true, compactPerSubreddit: nil, contentWidth: contentWidth, defSettings: postLinkDefSettings)
-//                    .swipyRev(size: winstonData.postDimensions.size, actionsSet: postSwipeActions, entity: post)
+//                    .swipyRev(size: RedfordData.postDimensions.size, actionsSet: postSwipeActions, entity: post)
                     //                      }
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                     .animation(.default, value: resultPosts.data)
                     .environmentObject(post)
                     .environmentObject(dummyAllSub)
-                    .environmentObject(winstonData)
+                    .environmentObject(RedfordData)
                   }
                 }
               }

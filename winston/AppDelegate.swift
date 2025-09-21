@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 31/07/23.
 //
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     setAudioToMixWithOthers()
     
     let defaultPipeline = ImagePipeline { config in
-      let dataCache = try? DataCache(name: "lo.cafe.winston.datacache")
+      let dataCache = try? DataCache(name: "lo.cafe.Redford.datacache")
       dataCache?.sizeLimit = 1024 * 1024 * 300
       config.dataCache = dataCache
       let dataLoader: DataLoader = {

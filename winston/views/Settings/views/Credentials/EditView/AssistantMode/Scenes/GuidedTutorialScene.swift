@@ -1,6 +1,6 @@
 //
 //  GuidedTutorialScene.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 04/01/24.
 //
@@ -23,7 +23,7 @@ struct GuidedTutorialScene: View {
       VStack(alignment: .center, spacing: 24) {
         
         VStack(alignment: .center, spacing: 12) {
-          Image(.winstonSide).size(104, .fit)
+          Image(.RedfordSide).size(104, .fit)
           
           VStack(alignment: .center, spacing: 4) {
             Text("Enabling the extension").fontSize(32, .bold)
@@ -40,7 +40,7 @@ struct GuidedTutorialScene: View {
             }
             .padding(.horizontal, 16)
             
-            WinstonButton(config: .secondary(fullWidth: true)) {
+            RedfordButton(config: .secondary(fullWidth: true)) {
               enableEmptyView()
               openURL(redditApiSettingsUrl)
             } label: {

@@ -1,6 +1,6 @@
 //
-//  winstonApp.swift
-//  winston
+//  RedfordApp.swift
+//  Redford
 //
 //  Created by Igor Marcossi on 23/06/23.
 //
@@ -11,7 +11,7 @@ import WhatsNewKit
 
 var shortcutItemToProcess: UIApplicationShortcutItem?
 @main
-struct winstonApp: App {
+struct RedfordApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   let persistenceController = PersistenceController.shared
   

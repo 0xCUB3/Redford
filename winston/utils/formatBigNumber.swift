@@ -1,6 +1,6 @@
 //
 //  formatBigNumber.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 11/07/23.
 //

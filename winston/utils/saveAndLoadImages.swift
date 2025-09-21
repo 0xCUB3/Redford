@@ -1,6 +1,6 @@
 //
 //  saveAndLoadImages.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 07/09/23.
 //
@@ -98,13 +98,13 @@ func loadImageURL(fileName: String) -> URL? {
 //    }
 //}
 
-func createZip(images: [String], theme: WinstonTheme) throws -> URL {
+func createZip(images: [String], theme: RedfordTheme) throws -> URL {
   let fileManager = FileManager.default
   let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
   
   guard let documentDirectory: URL = urls.first else { throw NSError(domain: "Document directory not found", code: 1, userInfo: nil) }
   
-  let imgURLs = images.filter { $0 != "winstonNoBG" }.map { documentDirectory.appendingPathComponent($0) }
+  let imgURLs = images.filter { $0 != "RedfordNoBG" }.map { documentDirectory.appendingPathComponent($0) }
   
   let jsonURL = documentDirectory.appendingPathComponent("theme.json")
   let jsonData = try JSONEncoder().encode(theme)
@@ -119,14 +119,14 @@ func createZip(images: [String], theme: WinstonTheme) throws -> URL {
 
   try Zip.zipFiles(paths: imgURLs + [jsonURL], zipFilePath: zipURL, password: nil, progress: nil)
   
-  let winstonFileName = "\(theme.metadata.name)-Theme"
-  let winstonFileNameURL = documentDirectory.appendingPathComponent("\(winstonFileName).winston")
+  let RedfordFileName = "\(theme.metadata.name)-Theme"
+  let RedfordFileNameURL = documentDirectory.appendingPathComponent("\(RedfordFileName).Redford")
   
-  if fileManager.fileExists(atPath: winstonFileNameURL.path()) {
-    try fileManager.removeItem(at: winstonFileNameURL)
+  if fileManager.fileExists(atPath: RedfordFileNameURL.path()) {
+    try fileManager.removeItem(at: RedfordFileNameURL)
   }
   
-  try fileManager.moveItem(at: zipURL, to: winstonFileNameURL)
+  try fileManager.moveItem(at: zipURL, to: RedfordFileNameURL)
   
-  return winstonFileNameURL
+  return RedfordFileNameURL
 }

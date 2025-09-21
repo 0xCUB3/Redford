@@ -1,6 +1,6 @@
 //
 //  SwipeAction.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 09/08/23.
 //
@@ -67,15 +67,15 @@ struct AnySwipeAction: Codable, Defaults.Serializable, Identifiable, Hashable, E
   init<T: SwipeAction>(_ base: T) where T: Codable {
     self.base = Base(base)
     self.actionClosure = { entity in
-      guard let entity = entity as? GenericRedditEntity<T.EntityType, T.EntityWinstonDataType> else { return }
+      guard let entity = entity as? GenericRedditEntity<T.EntityType, T.EntityRedfordDataType> else { return }
       await base.action(entity)
     }
     self.activeClosure = { entity in
-      guard let entity = entity as? GenericRedditEntity<T.EntityType, T.EntityWinstonDataType> else { return false }
+      guard let entity = entity as? GenericRedditEntity<T.EntityType, T.EntityRedfordDataType> else { return false }
       return base.active(entity)
     }
     self.enabledClosure = { entity in
-      guard let entity = entity as? GenericRedditEntity<T.EntityType, T.EntityWinstonDataType> else { return false }
+      guard let entity = entity as? GenericRedditEntity<T.EntityType, T.EntityRedfordDataType> else { return false }
       return base.enabled(entity)
     }
   }
@@ -142,10 +142,10 @@ protocol SwipeAction: Codable, Identifiable, Defaults.Serializable {
   var color: SwipeActionItem { get }
   var bgColor: SwipeActionItem { get }
   associatedtype EntityType: GenericRedditEntityDataType
-  associatedtype EntityWinstonDataType: Hashable
-  func action(_ entity: GenericRedditEntity<EntityType, EntityWinstonDataType>) async
-  func active(_ entity: GenericRedditEntity<EntityType, EntityWinstonDataType>) -> Bool
-  func enabled(_ entity: GenericRedditEntity<EntityType, EntityWinstonDataType>) -> Bool
+  associatedtype EntityRedfordDataType: Hashable
+  func action(_ entity: GenericRedditEntity<EntityType, EntityRedfordDataType>) async
+  func active(_ entity: GenericRedditEntity<EntityType, EntityRedfordDataType>) -> Bool
+  func enabled(_ entity: GenericRedditEntity<EntityType, EntityRedfordDataType>) -> Bool
 }
 
 struct UpvotePostAction: SwipeAction {
@@ -202,13 +202,13 @@ struct SeenPostAction: SwipeAction {
     if Defaults[.PostLinkDefSettings].hideOnRead {
       if let data = entity.data {
         Task(priority: .background) {
-          await entity.hide(!(data.winstonSeen ?? false))
+          await entity.hide(!(data.RedfordSeen ?? false))
         }
       }
     }
     await entity.toggleSeen(optimistic: true)
   }
-  func active(_ entity: Post) -> Bool { entity.data?.winstonSeen ?? false }
+  func active(_ entity: Post) -> Bool { entity.data?.RedfordSeen ?? false }
   func enabled(_ entity: Post) -> Bool { true }
 }
 
@@ -302,7 +302,7 @@ struct SelectTextCommentAction: SwipeAction {
   var icon = SwipeActionItem(normal: "selection.pin.in.out")
   var color = SwipeActionItem(normal: "0B84FE")
   var bgColor = SwipeActionItem(normal: "353439")
-  func action(_ entity: Comment) async { entity.data?.winstonSelecting = !(entity.data?.winstonSelecting ?? false) }
+  func action(_ entity: Comment) async { entity.data?.RedfordSelecting = !(entity.data?.RedfordSelecting ?? false) }
   func active(_ entity: Comment) -> Bool { false }
   func enabled(_ entity: Comment) -> Bool { true }
 }

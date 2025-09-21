@@ -1,6 +1,6 @@
 //
 //  resetApp.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 04/09/23.
 //
@@ -20,7 +20,7 @@ func resetApp() {
 func resetCredentials() {
   RedditCredentialsManager.shared.credentials.forEach { $0.delete() }
   
-  let credentialsKeychain = Keychain(service: "lo.cafe.winston.reddit-credentials").synchronizable(Defaults[.BehaviorDefSettings].iCloudSyncCredentials)
+  let credentialsKeychain = Keychain(service: "lo.cafe.Redford.reddit-credentials").synchronizable(Defaults[.BehaviorDefSettings].iCloudSyncCredentials)
   
   credentialsKeychain["apiAppID"] = nil
   credentialsKeychain["apiAppSecret"] = nil

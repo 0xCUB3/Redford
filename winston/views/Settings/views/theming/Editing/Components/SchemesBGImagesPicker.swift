@@ -1,6 +1,6 @@
 //
 //  SchemesBGImagesPicker.swift
-//  winston
+//  Redford
 //
 //  Created by Igor Marcossi on 14/09/23.
 //
