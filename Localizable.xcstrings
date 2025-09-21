@@ -45,6 +45,9 @@
         }
       }
     },
+    " · " : {
+
+    },
     " testers! (but it needs help)" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -90,19 +93,19 @@
         }
       }
     },
-    "...unfortunately, lo.cafe (the team/group of friends behind Winston) isn't self sustainable yet.\nEven though we have other software for sale, we still have dayjobs." : {
+    "...unfortunately, lo.cafe (the team/group of friends behind Redford) isn't self sustainable yet.\nEven though we have other software for sale, we still have dayjobs." : {
       "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "...leider ist lo.cafe (das Team/die Gruppe von Freunden hinter Winston) noch nicht selbsttragend.\nAuch wenn wir andere Software zum Verkauf haben, haben wir immer noch Jobs."
+            "value" : "...leider ist lo.cafe (das Team/die Gruppe von Freunden hinter Redford) noch nicht selbsttragend.\nAuch wenn wir andere Software zum Verkauf haben, haben wir immer noch Jobs."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "...sfortunatamente, lo.cafe (il team/gruppo di amici dietro Winston) non è ancora autosufficiente.\nAnche se abbiamo altri software in vendita, abbiamo ancora un altro lavoro."
+            "value" : "...sfortunatamente, lo.cafe (il team/gruppo di amici dietro Redford) non è ancora autosufficiente.\nAnche se abbiamo altri software in vendita, abbiamo ancora un altro lavoro."
           }
         }
       }
@@ -172,6 +175,9 @@
           }
         }
       }
+    },
+    "*Collapsed...*" : {
+
     },
     "*No results found*" : {
       "localizations" : {
@@ -394,7 +400,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Über Winston"
+            "value" : "Über Redford"
           }
         },
         "it" : {
@@ -697,18 +703,18 @@
         }
       }
     },
-    "Check out Winston's Source Code" : {
+    "Check out Redford's Source Code" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wirf einen Blick auf Winstons Quellcode"
+            "value" : "Wirf einen Blick auf Redfords Quellcode"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scopri il codice sorgente di Winston"
+            "value" : "Scopri il codice sorgente di Redford"
           }
         }
       }
@@ -747,6 +753,9 @@
           }
         }
       }
+    },
+    "Comment skipper button" : {
+
     },
     "Comments" : {
       "localizations" : {
@@ -1012,6 +1021,7 @@
       }
     },
     "Depressive load more :(" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1119,25 +1129,22 @@
         }
       }
     },
-    "Don't worry if you can't or simply don't wanna donate, we're gonna keep developing Winston anyway and we already love you for being using it ❤️" : {
+    "Don't worry if you can't or simply don't wanna donate, we're gonna keep developing Redford anyway and we already love you for being using it ❤️" : {
       "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keine Sorge, wenn du nicht spenden kannst oder einfach nicht möchtest. Wir werden Winston trotzdem weiterentwickeln, und wir lieben Dich bereits dafür, dass du Winston verwendest. ❤️"
+            "value" : "Keine Sorge, wenn du nicht spenden kannst oder einfach nicht möchtest. Wir werden Redford trotzdem weiterentwickeln, und wir lieben Dich bereits dafür, dass du Redford verwendest. ❤️"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non preoccuparti se non puoi o semplicemente non vuoi donare, continueremo comunque lo sviluppo di Winston e ti amiamo già per averlo utilizzato ❤️"
+            "value" : "Non preoccuparti se non puoi o semplicemente non vuoi donare, continueremo comunque lo sviluppo di Redford e ti amiamo già per averlo utilizzato ❤️"
           }
         }
       }
-    },
-    "Download" : {
-
     },
     "Drag Left" : {
       "localizations" : {
@@ -1283,7 +1290,7 @@
         }
       }
     },
-    "Everything went well. You can start using Winston now!" : {
+    "Everything went well. You can start using Redford now!" : {
 
     },
     "Export" : {
@@ -1988,6 +1995,9 @@
         }
       }
     },
+    "Jump to Next Comment" : {
+
+    },
     "Just a sec..." : {
       "localizations" : {
         "de" : {
@@ -2004,19 +2014,19 @@
         }
       }
     },
-    "Know more about winston" : {
+    "Know more about Redford" : {
       "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mehr über Winston erfahren"
+            "value" : "Mehr über Redford erfahren"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scopri di più su winston"
+            "value" : "Scopri di più su Redford"
           }
         }
       }
@@ -2104,18 +2114,18 @@
     "LOAD MORE" : {
 
     },
-    "Lock Winston With %@" : {
+    "Lock Redford With %@" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Winston mit %@ sperren"
+            "value" : "Redford mit %@ sperren"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Blocca Winston con %@"
+            "value" : "Blocca Redford con %@"
           }
         }
       }
@@ -2171,19 +2181,19 @@
         }
       }
     },
-    "Many of you is not aware about our patreon, which has a 1U$ tier. If each of our testers would donate 1U$/month, it'd be more than enough to allow us to focus all our time on Winston and other amazing projects." : {
+    "Many of you is not aware about our patreon, which has a 1U$ tier. If each of our testers would donate 1U$/month, it'd be more than enough to allow us to focus all our time on Redford and other amazing projects." : {
       "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Viele wissen nicht von unserem Patreon, welcher einen 1U$ Tier hat. Wenn jeder unserer Tester 1U$/Monat spendet, dann wäre das mehr als genug um es uns zu ermöglichen, unsere ganze Zeit auf Winston und andere tolle Projekte zu konzentrieren."
+            "value" : "Viele wissen nicht von unserem Patreon, welcher einen 1U$ Tier hat. Wenn jeder unserer Tester 1U$/Monat spendet, dann wäre das mehr als genug um es uns zu ermöglichen, unsere ganze Zeit auf Redford und andere tolle Projekte zu konzentrieren."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Molti di voi potrebbero non essere a conoscenza del nostro Patreon, che ha un livello di donazione di 1U$. Se ogni nostro tester donasse 1U$/mese, sarebbe più che sufficiente per permetterci di concentrare tutto il nostro tempo su Winston e altri progetti incredibili."
+            "value" : "Molti di voi potrebbero non essere a conoscenza del nostro Patreon, che ha un livello di donazione di 1U$. Se ogni nostro tester donasse 1U$/mese, sarebbe più che sufficiente per permetterci di concentrare tutto il nostro tempo su Redford e altri progetti incredibili."
           }
         }
       }
@@ -2444,6 +2454,7 @@
       }
     },
     "No comments around..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2542,6 +2553,7 @@
 
     },
     "on " : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2590,6 +2602,7 @@
       }
     },
     "Open links in Safari" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2611,21 +2624,24 @@
     "Open Reddit API page" : {
 
     },
-    "Open Reddit API settings in Safari by clicking the button below, then switch back to Winston." : {
+    "Open Reddit API settings in Safari by clicking the button below, then switch back to Redford." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Öffnen Sie Reddit API-Einstellungen in Safari, indem Sie auf die Schaltfläche unten klicken, und wechseln Sie dann zurück zu Winston."
+            "value" : "Öffnen Sie Reddit API-Einstellungen in Safari, indem Sie auf die Schaltfläche unten klicken, und wechseln Sie dann zurück zu Redford."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apri le impostazioni dell'API di Reddit in Safari cliccando il pulsante sottostante, quindi torna a Winston."
+            "value" : "Apri le impostazioni dell'API di Reddit in Safari cliccando il pulsante sottostante, quindi torna a Redford."
           }
         }
       }
+    },
+    "Open subreddit options on tap" : {
+
     },
     "Open Youtube Videos Externally" : {
       "localizations" : {
@@ -2967,6 +2983,87 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Segna come letto durante lo scorrimento"
+          }
+        }
+      }
+    },
+    "Redford" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford"
+          }
+        }
+      }
+    },
+    "Redford hit " : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford getroffen "
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford hit "
+          }
+        }
+      }
+    },
+    "Redford is a free and open source software, therefore it isn't against Reddit's policies." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford ist eine freie und Open-Source-Software, daher ist es nicht gegen Reddits Richtlinien."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford è un software gratuito e open source, quindi non è contro le politiche di Reddit."
+          }
+        }
+      }
+    },
+    "Redford is developed by the lo.cafe team, a group of friends making amazing software together." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford wird vom lo.cafe Team entwickelt, eine Gruppe von Freunden, die zusammen tolle Software erschaffen."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford è sviluppato dal team di lo.cafe, un gruppo di amici che creano software incredibile insieme."
+          }
+        }
+      }
+    },
+    "Redford is ready to be used!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford ist bereit für den Einsatz!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redford è pronto per essere usato!"
           }
         }
       }
@@ -3608,6 +3705,7 @@
       }
     },
     "Tap to expand" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3704,9 +3802,6 @@
         }
       }
     },
-    "Theme Store" : {
-
-    },
     "Theme Store Tint" : {
       "localizations" : {
         "de" : {
@@ -3772,9 +3867,6 @@
       }
     },
     "There are two ways for doing that:" : {
-
-    },
-    "There was an error importing this theme" : {
 
     },
     "This is not working yet :(" : {
@@ -3889,19 +3981,19 @@
         }
       }
     },
-    "Tired of Winstons current look? Try the theme editor in settings now!" : {
+    "Tired of Redfords current look? Try the theme editor in settings now!" : {
       "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gelangweilt von Winstons aktuellem Aussehen? Probieren Sie jetzt den Theme-Editor in den Einstellungen!"
+            "value" : "Gelangweilt von Redfords aktuellem Aussehen? Probieren Sie jetzt den Theme-Editor in den Einstellungen!"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stanco dell'aspetto attuale di Winston? Prova l'editor di temi nelle impostazioni ora!"
+            "value" : "Stanco dell'aspetto attuale di Redford? Prova l'editor di temi nelle impostazioni ora!"
           }
         }
       }
@@ -3926,18 +4018,18 @@
     "To switch accounts, hold the \"me\" (or your username) tab pressed in the bottom bar." : {
 
     },
-    "To use Reddit, Winston uses a special key you can generate yourself in Reddit's site." : {
+    "To use Reddit, Redford uses a special key you can generate yourself in Reddit's site." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um Reddit nutzen zu können, verwendet Winston einen speziellen Schlüssel, den Sie sich auf Reddit's Website generieren können."
+            "value" : "Um Reddit nutzen zu können, verwendet Redford einen speziellen Schlüssel, den Sie sich auf Reddit's Website generieren können."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Per utilizzare Reddit, Winston utilizza una chiave speciale che puoi generare tu stesso sul sito di Reddit."
+            "value" : "Per utilizzare Reddit, Redford utilizza una chiave speciale che puoi generare tu stesso sul sito di Reddit."
           }
         }
       }
@@ -4054,19 +4146,19 @@
         }
       }
     },
-    "Wanna learn more about Winston's situation before donating? Press the button below" : {
+    "Wanna learn more about Redford's situation before donating? Press the button below" : {
       "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Möchtest du vor der Spende mehr über die Situation von Winston erfahren? Drücke den Button unten"
+            "value" : "Möchtest du vor der Spende mehr über die Situation von Redford erfahren? Drücke den Button unten"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vuoi saperne di più sulla situazione di Winston prima di donare? Premi il pulsante qui sotto"
+            "value" : "Vuoi saperne di più sulla situazione di Redford prima di donare? Premi il pulsante qui sotto"
           }
         }
       }
@@ -4077,19 +4169,19 @@
     "We can't load this page 😔" : {
 
     },
-    "We hit 8500 testers on TestFlight and this couldn't make us happier. Thank you so much for using and supporting Winston." : {
+    "We hit 8500 testers on TestFlight and this couldn't make us happier. Thank you so much for using and supporting Redford." : {
       "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wir haben 8500 Tester auf TestFlight erreicht und das könnte uns nicht glücklicher machen. Vielen Dank für deine Verwendung und Unterstützung von Winston."
+            "value" : "Wir haben 8500 Tester auf TestFlight erreicht und das könnte uns nicht glücklicher machen. Vielen Dank für deine Verwendung und Unterstützung von Redford."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Abbiamo raggiunto 8500 tester su TestFlight e questo non potrebbe renderci più felici. Grazie mille per utilizzare e sostenere Winston."
+            "value" : "Abbiamo raggiunto 8500 tester su TestFlight e questo non potrebbe renderci più felici. Grazie mille per utilizzare e sostenere Redford."
           }
         }
       }
@@ -4144,87 +4236,6 @@
     },
     "Why are you here?" : {
 
-    },
-    "Winston" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston"
-          }
-        }
-      }
-    },
-    "Winston hit " : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston getroffen "
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston hit "
-          }
-        }
-      }
-    },
-    "Winston is a free and open source software, therefore it isn't against Reddit's policies." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston ist eine freie und Open-Source-Software, daher ist es nicht gegen Reddits Richtlinien."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston è un software gratuito e open source, quindi non è contro le politiche di Reddit."
-          }
-        }
-      }
-    },
-    "Winston is developed by the lo.cafe team, a group of friends making amazing software together." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston wird vom lo.cafe Team entwickelt, eine Gruppe von Freunden, die zusammen tolle Software erschaffen."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston è sviluppato dal team di lo.cafe, un gruppo di amici che creano software incredibile insieme."
-          }
-        }
-      }
-    },
-    "Winston is ready to be used!" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston ist bereit für den Einsatz!"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winston è pronto per essere usato!"
-          }
-        }
-      }
     },
     "Yes" : {
       "localizations" : {

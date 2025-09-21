@@ -1,6 +1,6 @@
 //
 //  CachedFilter+CoreDataClass.swift
-//  winston
+//  Redford
 //
 //  Created by Zander Bobronnikov on 12/10/23.
 //
