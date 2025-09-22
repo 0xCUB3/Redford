@@ -6,8 +6,8 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:app.redford.cafe</string>
-		<string>applinks:app.redford.lo.cafe</string>
+		<string>applinks:app.winston.cafe</string>
+		<string>applinks:app.winston.lo.cafe</string>
 	</array>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>

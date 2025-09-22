@@ -11,7 +11,7 @@ document.onreadystatechange = function () {
           console.log('Parsed URL:', url);
 
           if (url.hostname.includes('reddit.com')) {
-            link.href = link.href.replace(/(https?:\/\/)?(www\.)?reddit\.com/gi, 'https://app.Redford.cafe');
+            link.href = link.href.replace(/(https?:\/\/)?(www\.)?reddit\.com/gi, 'https://app.winston.cafe');
             console.log('Modified link:', link.href);
           }
         } catch (e) {
